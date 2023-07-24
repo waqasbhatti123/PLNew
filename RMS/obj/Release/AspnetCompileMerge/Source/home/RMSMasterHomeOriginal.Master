@@ -1,0 +1,151 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="RMS.RMSMasterHomeOriginal" CodeBehind="RMSMasterHomeOriginal.Master.cs" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Src="~/UserControl/Messages.ascx" TagName="Messages" TagPrefix="uc1" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>RMS</title>
+ 
+    <link id="csMain" runat="server" href="../cs/style.css" rel="stylesheet" type="text/css" />
+    <link id="csFont" runat="server" href="../cs/font.css" rel="Stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../images/icon.ico" />
+    <script src="../js/common.js" type="text/javascript"></script>
+
+    <script src="../Scripts/jquery1.12.0.min.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery1.11.4-ui.min.js" type="text/javascript"></script>
+    <link href="../Scripts/jquery1.11.4-ui.css" rel="stylesheet" type="text/css" />
+    <script src="../Scripts/json2.js" type="text/javascript"></script>
+    <%--<script src="../Scripts/jquery-1.6.2.min.js" type="text/javascript"></script>--%>
+    <script src="../Scripts/modernizr-1.7.min.js" type="text/javascript"></script>
+    <%--<script src="../Scripts/jquery-ui-1.8.16.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery-ui-1.8.16.min.js" type="text/javascript"></script>--%>
+    <%--<link href="../Scripts/jquery.ui.all.css" rel="stylesheet" type="text/css" />
+    <link href="../Scripts/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="../Scripts/jquery.ui.theme.css" rel="stylesheet" type="text/css" /--%>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" AsyncPostBackTimeout="36000" runat="server">
+    </asp:ScriptManager>
+    
+<div id="wrapper">
+    <div id="Innerwrapper">
+        <!-- Header -->
+        <div id="innerTop">
+            <div style="width:100%; height:60px; background-color:#FFFFFF">
+                <div style="float:left;" class="mainHeader">
+                    <asp:Label ID="lblCompName" runat="server" Text="" Visible="true"></asp:Label>
+                </div>
+                <div style="float:right;">
+                    <asp:Label ID="lblWelcome" runat="server" CssClass="welcomeText" ></asp:Label>
+                        <asp:Label ID="lblWelcome0" runat="server" CssClass="welcomeText" ></asp:Label>
+                        <asp:Label ID="lblWelcomeDateTime" runat="server" CssClass="welcomeText"></asp:Label>
+                        &nbsp;
+                        <asp:Label ID="Label1" runat="server" CssClass="welcomeText"  Text="|"></asp:Label>
+                        &nbsp;
+                    <asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click" CssClass="logoutText">Logout</asp:LinkButton>
+                </div>
+             </div>
+             <div class="innerTop1">
+                <div style="width:900px; float:left ; padding-top:2px; ">
+                <ul class="menu-bar">
+                 <li>
+                    <a href="../homeselection.aspx?PID=1" >HOME</a>
+                 </li>
+                 <li id="li0" runat="server"  visible="false">
+                      <a id="a0" runat="server" href="javascript:void(0);" >a0<b ></b></a>
+                      <ul id="ul0" runat="server" >
+                      </ul>
+                 </li>
+                 <li id="li1" runat="server" visible="false">
+                    <a id="a1" runat="server" href="javascript:void(0);" >a1<b ></b></a>
+                    <ul id="ul1" runat="server" >
+                    </ul>
+                 </li>
+                 <li id="li2" runat="server" visible="false" >
+                     <a id="a2" runat="server" href="javascript:void(0);" >a2<b ></b></a>
+                     <ul id="ul2" runat="server" >
+                     </ul>
+                  </li>
+                  <li id="li3" runat="server"  visible="false" >
+                      <a id="a3" runat="server" href="javascript:void(0);">a3<b ></b></a>
+                      <ul id="ul3" runat="server" >
+                      </ul>
+                  </li>
+                  <li id="li4" runat="server"  visible="false">
+                      <a id="a4" runat="server" href="javascript:void(0);">a4<b ></b></a>
+                      <ul id="ul4" runat="server" >
+                      </ul>
+                  </li>
+                  <li id="li5" runat="server"  visible="false" >
+                      <a id="a5" runat="server" href="javascript:void(0);">a5<b ></b></a>
+                      <ul id="ul5" runat="server" >
+                      </ul>
+                  </li>
+                  <li id="li6" runat="server"  visible="false" >
+                      <a id="a6" runat="server" href="javascript:void(0);">a6<b ></b></a>
+                     <ul id="ul6" runat="server" >
+                      </ul>
+                  </li>
+                  <li id="li7" runat="server"  visible="false" >
+                      <a id="a7" runat="server" href="javascript:void(0);">a7<b ></b></a>
+                      <ul id="ul7" runat="server">
+                      </ul>
+                  </li>
+                  <li id="li8" runat="server"  visible="false">
+                      <a id="a8" runat="server" href="javascript:void(0);">a8<b ></b></a>
+                      <ul id="ul8" runat="server" >
+                      </ul>
+                  </li>
+                  <li id="li9" runat="server"  visible="false" >
+                      <a id="a9" runat="server" href="javascript:void(0);">a9<b ></b></a>
+                      <ul id="ul9" runat="server" >
+                      </ul>
+                  </li>
+              
+                </ul>
+            </div>
+             </div>
+         </div>
+
+          <div style="width:100%; background-color:#FFFFFF; float:left; margin-top:0px;">
+                 <div style="width:98%; float:left;  padding:5px;" class="mainHeading">
+		            <!-- main heading -->
+		                <asp:Label ID="lblModuleName" runat="server" CssClass="mainHeading" Visible="true"></asp:Label> 
+		                <asp:Label ID="Label2" CssClass="mainHeading" runat="server" Text= ""></asp:Label>
+		                <asp:Label ID="lblTitle" CssClass="mainHeading" runat="server"></asp:Label>
+                         &nbsp; &nbsp; &nbsp;<asp:Label ID="lblTime" runat="server" Visible="false"></asp:Label>
+	            </div>
+                <div style="width:98%; padding:15px; float:left;" class="bodyText" >
+                     <!-- main working area -->
+		        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+		
+		        <asp:UpdateProgress id="updateProgress" runat="server">
+                        <ProgressTemplate>
+                            <div class="progressBackgroundFilter"></div>
+                            <div class="processMessage">
+                                 <div align="center" style="color:Blue;">
+                                    <asp:Literal ID="lblPrgress" runat="server" Text="Please wait..."></asp:Literal>
+                                    <br /> <br />
+                                    <img alt="Please wait..." src="../images/waiting.gif" />
+                                 </div>
+                            </div>
+                        </ProgressTemplate>
+                    </asp:UpdateProgress> 
+                </div>
+	    </div>	
+        <div class="clear"></div>
+       <div class="innerFooter">
+          
+       </div>
+    </div>
+</div>
+
+</form>
+</body>
+</html>

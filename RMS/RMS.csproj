@@ -1,0 +1,3432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{74371965-3A78-4D19-93A7-4EFC4EDBC280}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RMS</RootNamespace>
+    <AssemblyName>RMS</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.0.30930.28736, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1449.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1449.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1449.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>C:\Windows\assembly\GAC_MSIL\System.Web.DataVisualization\3.5.0.0__31bf3856ad364e35\System.Web.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\GL Voucher Menus.sql" />
+    <Content Include="App_Data\template script.sql" />
+    <Content Include="app_offline1.htm" />
+    <Content Include="assets\css\animate.min.css" />
+    <Content Include="assets\css\bootstrap-wysihtml5.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\dataTables.bootstrap4.min.css" />
+    <Content Include="assets\css\fileinput.css" />
+    <Content Include="assets\css\font-awesome.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\fullcalendar.css" />
+    <Content Include="assets\css\ionicons.css" />
+    <Content Include="assets\css\jquery.easy-pie-chart.css" />
+    <Content Include="assets\css\jquery.mCustomScrollbar.css" />
+    <Content Include="assets\css\jquery.steps.css" />
+    <Content Include="assets\css\responsive.css" />
+    <Content Include="assets\css\semantic.min.css" />
+    <Content Include="assets\css\simple-line-icons.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\tree.css" />
+    <Content Include="assets\css\weather-icons.min.css" />
+    <Content Include="assets\css\wysiwyg-color.css" />
+    <Content Include="assets\fonts\fontawesome-webfont3e6e.html" />
+    <Content Include="assets\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular-2.html" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular-3.html" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular-4.html" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.html" />
+    <Content Include="assets\fonts\glyphicons-halflings-regulard41d.html" />
+    <Content Include="assets\fonts\ionicons.svg" />
+    <Content Include="assets\fonts\revicons\revicons.svg" />
+    <Content Include="assets\fonts\Simple-Line-Icons.svg" />
+    <Content Include="assets\fonts\weathericons-regular-webfont.html" />
+    <Content Include="assets\fonts\weathericons-regular-webfont.svg" />
+    <Content Include="assets\images\01.jpg" />
+    <Content Include="assets\images\01_150x150.png" />
+    <Content Include="assets\images\01_40x40.png" />
+    <Content Include="assets\images\01_800x150.jpg" />
+    <Content Include="assets\images\02.jpg" />
+    <Content Include="assets\images\03.jpg" />
+    <Content Include="assets\images\04.jpg" />
+    <Content Include="assets\images\32px.png" />
+    <Content Include="assets\images\about-1.jpg" />
+    <Content Include="assets\images\background-login.png" />
+    <Content Include="assets\images\check.svg" />
+    <Content Include="assets\images\course1.jpg" />
+    <Content Include="assets\images\flag1.png" />
+    <Content Include="assets\images\flag2.png" />
+    <Content Include="assets\images\flag3.png" />
+    <Content Include="assets\images\flag4.png" />
+    <Content Include="assets\images\flag5.png" />
+    <Content Include="assets\images\img1.jpg" />
+    <Content Include="assets\images\img2.jpg" />
+    <Content Include="assets\images\img3.jpg" />
+    <Content Include="assets\images\img4.jpg" />
+    <Content Include="assets\images\img_new1.jpg" />
+    <Content Include="assets\images\img_new2.jpg" />
+    <Content Include="assets\images\img_new3.jpg" />
+    <Content Include="assets\images\img_new4.jpg" />
+    <Content Include="assets\images\img_new5.jpg" />
+    <Content Include="assets\images\img_new6.jpg" />
+    <Content Include="assets\images\img_new7.jpg" />
+    <Content Include="assets\images\logo.png" />
+    <Content Include="assets\images\logo2.png" />
+    <Content Include="assets\images\pdf-attachment.jpg" />
+    <Content Include="assets\images\product_2.jpg" />
+    <Content Include="assets\images\product_3.jpg" />
+    <Content Include="assets\images\product_4.jpg" />
+    <Content Include="assets\images\product_5.jpg" />
+    <Content Include="assets\images\product_6.jpg" />
+    <Content Include="assets\images\product_7.jpg" />
+    <Content Include="assets\images\product_8.jpg" />
+    <Content Include="assets\images\product_img.jpg" />
+    <Content Include="assets\images\radio.svg" />
+    <Content Include="assets\images\sidebar_bg.jpg" />
+    <Content Include="assets\images\small-logo.png" />
+    <Content Include="assets\images\tab_img1.svg" />
+    <Content Include="assets\images\throbber.gif" />
+    <Content Include="assets\images\transport-12.jpg" />
+    <Content Include="assets\images\user.png" />
+    <Content Include="assets\images\user1.png" />
+    <Content Include="assets\images\user2.png" />
+    <Content Include="assets\images\user3.png" />
+    <Content Include="assets\images\user4.png" />
+    <Content Include="assets\images\user5.png" />
+    <Content Include="assets\images\white-logo.png" />
+    <Content Include="assets\js\accounting.min.js" />
+    <Content Include="assets\js\bootstrap-wysihtml5.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\calendar-basic-init.js" />
+    <Content Include="assets\js\calendar-external-events-init.js" />
+    <Content Include="assets\js\calendar-list-init.js" />
+    <Content Include="assets\js\Chart.bundle.js" />
+    <Content Include="assets\js\chart.js" />
+    <Content Include="assets\js\Chart.min.js" />
+    <Content Include="assets\js\chartjs-init-alt.js" />
+    <Content Include="assets\js\chartjs-init.js" />
+    <Content Include="assets\js\custom-chart-init.js" />
+    <Content Include="assets\js\custom.js" />
+    <Content Include="assets\js\data-tables\data\arrays.txt" />
+    <Content Include="assets\js\dataTables.bootstrap4.min.js" />
+    <Content Include="assets\js\easy-pie-chart-init.js" />
+    <Content Include="assets\js\echarts\echarts-all-3.js" />
+    <Content Include="assets\js\echarts\init-echarts.js" />
+    <Content Include="assets\js\file-input-init.js" />
+    <Content Include="assets\js\fileinput.js" />
+    <Content Include="assets\js\flot-chart-init.js" />
+    <Content Include="assets\js\flot-chart\jquery.flot.crosshair.js" />
+    <Content Include="assets\js\flot-chart\jquery.flot.js" />
+    <Content Include="assets\js\flot-chart\jquery.flot.pie.js" />
+    <Content Include="assets\js\flot-chart\jquery.flot.resize.js" />
+    <Content Include="assets\js\flot-chart\jquery.flot.stack.js" />
+    <Content Include="assets\js\flot-chart\jquery.flot.time.js" />
+    <Content Include="assets\js\flot-chart\jquery.flot.tooltip.min.js" />
+    <Content Include="assets\js\form-wizard-init.js" />
+    <Content Include="assets\js\fullcalendar.js" />
+    <Content Include="assets\js\index2\Chart.bundle.js" />
+    <Content Include="assets\js\index2\chart.js" />
+    <Content Include="assets\js\index2\Chart.min.js" />
+    <Content Include="assets\js\index2\chartjs-init-alt.js" />
+    <Content Include="assets\js\index2\chartjs-init.js" />
+    <Content Include="assets\js\index2\flot-chart\flot-chart-init.js" />
+    <Content Include="assets\js\index2\flot-chart\jquery.flot.crosshair.js" />
+    <Content Include="assets\js\index2\flot-chart\jquery.flot.js" />
+    <Content Include="assets\js\index2\flot-chart\jquery.flot.pie.js" />
+    <Content Include="assets\js\index2\flot-chart\jquery.flot.resize.js" />
+    <Content Include="assets\js\index2\flot-chart\jquery.flot.stack.js" />
+    <Content Include="assets\js\index2\flot-chart\jquery.flot.time.js" />
+    <Content Include="assets\js\index2\flot-chart\jquery.flot.tooltip.min.js" />
+    <Content Include="assets\js\index2\utils.js" />
+    <Content Include="assets\js\index3\Chart.min.js" />
+    <Content Include="assets\js\index3\chartjs-init-alt.js" />
+    <Content Include="assets\js\index3\echarts-all-3.js" />
+    <Content Include="assets\js\index3\flot-chart\flot-chart-init.js" />
+    <Content Include="assets\js\index3\flot-chart\jquery.flot.crosshair.js" />
+    <Content Include="assets\js\index3\flot-chart\jquery.flot.js" />
+    <Content Include="assets\js\index3\flot-chart\jquery.flot.pie.js" />
+    <Content Include="assets\js\index3\flot-chart\jquery.flot.resize.js" />
+    <Content Include="assets\js\index3\flot-chart\jquery.flot.stack.js" />
+    <Content Include="assets\js\index3\flot-chart\jquery.flot.time.js" />
+    <Content Include="assets\js\index3\flot-chart\jquery.flot.tooltip.min.js" />
+    <Content Include="assets\js\index3\init-echarts.js" />
+    <Content Include="assets\js\index\Chart.bundle.js" />
+    <Content Include="assets\js\index\chart.js" />
+    <Content Include="assets\js\index\echarts-all-3.js" />
+    <Content Include="assets\js\index\init-echarts.js" />
+    <Content Include="assets\js\index\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="assets\js\index\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="assets\js\index\morris-chart\morris-init.js" />
+    <Content Include="assets\js\index\morris-chart\morris.css" />
+    <Content Include="assets\js\index\morris-chart\morris.js" />
+    <Content Include="assets\js\index\morris-chart\raphael-min.js" />
+    <Content Include="assets\js\index\utils.js" />
+    <Content Include="assets\js\index\vmap-init.js" />
+    <Content Include="assets\js\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="assets\js\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="assets\js\jquery-ui.min.js" />
+    <Content Include="assets\js\jquery-validate-init.js" />
+    <Content Include="assets\js\jquery.dataTables.min.js" />
+    <Content Include="assets\js\jquery.dcjqaccordion.2.7.js" />
+    <Content Include="assets\js\jquery.easy-pie-chart.js" />
+    <Content Include="assets\js\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="assets\js\jquery.min.js" />
+    <Content Include="assets\js\jquery.sparkline.js" />
+    <Content Include="assets\js\jquery.steps.min.js" />
+    <Content Include="assets\js\jquery.stepy.js" />
+    <Content Include="assets\js\jquery.validate.js" />
+    <Content Include="assets\js\jstree.min.js" />
+    <Content Include="assets\js\moment.min.js" />
+    <Content Include="assets\js\morris-chart\morris.css" />
+    <Content Include="assets\js\morris-chart\morris.js" />
+    <Content Include="assets\js\morris-chart\raphael-min.js" />
+    <Content Include="assets\js\morris-init.js" />
+    <Content Include="assets\js\owl.carousel.js" />
+    <Content Include="assets\js\popper.min.js" />
+    <Content Include="assets\js\round-chart.js" />
+    <Content Include="assets\js\sparkline-init.js" />
+    <Content Include="assets\js\tagsinput\bootstrap-tagsinput.css" />
+    <Content Include="assets\js\tagsinput\bootstrap-tagsinput.js" />
+    <Content Include="assets\js\tether.min.js" />
+    <Content Include="assets\js\typeahead.bundle.min.js" />
+    <Content Include="assets\js\underscore-min.js" />
+    <Content Include="assets\js\utils.js" />
+    <Content Include="assets\js\vmap-init.js" />
+    <Content Include="assets\js\wysihtml5-0.3.0.js" />
+    <Content Include="assets\RmsStyle.css" />
+    <Content Include="cs\Practice.css" />
+    <Content Include="dll\Microsoft.ReportViewer.Common.dll" />
+    <Content Include="dll\Microsoft.ReportViewer.ProcessingObjectModel.dll" />
+    <Content Include="dll\Microsoft.ReportViewer.WebForms.dll" />
+    <Content Include="empix\account.jpg" />
+    <Content Include="empix\pucarlogo.jpeg" />
+    <Content Include="favicon.ico" />
+    <Content Include="GLSetup\ADPScheme.aspx" />
+    <Content Include="GLSetup\ADPSchemeReport.aspx" />
+    <Content Include="GLSetup\ArtsClassesStudent.aspx" />
+    <Content Include="GLSetup\BankWiseExpense.aspx" />
+    <Content Include="GLSetup\BmFarm11.aspx" />
+    <Content Include="GLSetup\BmFarm10.aspx" />
+    <Content Include="GLSetup\ExcessSsurrendertwo.aspx" />
+    <Content Include="GLSetup\ExcessSsurrender.aspx" />
+    <Content Include="GLSetup\DeveBudget.aspx" />
+    <Content Include="GLSetup\BudgetScheduleNewExpenReport.aspx" />
+    <Content Include="GLSetup\CouncilCourtCases.aspx" />
+    <Content Include="GLSetup\DistGrntAmounAllCouReport.aspx" />
+    <Content Include="GLSetup\ExceSurrReport.aspx" />
+    <Content Include="GLSetup\ExpenditureStatement.aspx" />
+    <Content Include="GLSetup\DistGrantAidCoucil.aspx" />
+    <Content Include="GLSetup\ApprovedBudget.aspx" />
+    <Content Include="GLSetup\ApprovedBudgetReport.aspx" />
+    <Content Include="GLSetup\BudgetScheduleNewExpen.aspx" />
+    <Content Include="GLSetup\DramaInfo.aspx" />
+    <Content Include="GLSetup\AppBudVsAllocation.aspx" />
+    <Content Include="GLSetup\ApproperiationReport.aspx" />
+    <Content Include="GLSetup\PostAuditReport.aspx" />
+    <Content Include="GLSetup\ExpenditureStatementReport.aspx" />
+    <Content Include="GLSetup\ExpStatMonthWise.aspx" />
+    <Content Include="GLSetup\ExpVsAllocationReport.aspx" />
+    <Content Include="GLSetup\SNEAvsAllocation.aspx" />
+    <Content Include="GLSetup\SNEvdAllocationReport.aspx" />
+    <Content Include="GLSetup\TaxPayableReport.aspx" />
+    <Content Include="GLSetup\SNEDemandReport.aspx" />
+    <Content Include="GLSetup\GrantReleaseDivisionsReport.aspx" />
+    <Content Include="GLSetup\HeadWiseDivisionReport.aspx" />
+    <Content Include="GLSetup\GrantReleaseReport.aspx" />
+    <Content Include="GLSetup\GrantRelease.aspx" />
+    <Content Include="GLSetup\Budget.aspx" />
+    <Content Include="GLSetup\BudgetReport.aspx" />
+    <Content Include="GLSetup\frmChequePrint.aspx" />
+    <Content Include="GLSetup\frmBankPaymentAdvice.aspx" />
+    <Content Include="GLSetup\SNEApproved.aspx" />
+    <Content Include="GLSetup\TextPayable.aspx" />
+    <Content Include="GLSetup\TheaterInfor.aspx" />
+    <Content Include="GLSetup\TheatreInfoReport.aspx" />
+    <Content Include="GLSetup\Voucher.aspx" />
+    <Content Include="home\GLHomeBudCharts.aspx" />
+    <Content Include="home\GLHomecopy.aspx" />
+    <Content Include="Index.aspx" />
+    <Content Include="cs\font.css" />
+    <Content Include="GLSetup\frmCcGrp.aspx" />
+    <Content Include="GLSetup\frmFinancialReportRpt.aspx" />
+    <Content Include="GLSetup\frmReportParameter_Old.aspx" />
+    <Content Include="GLSetup\MonthlyCCAcDet.aspx" />
+    <Content Include="GLSetup\MonthlyCCAc.aspx" />
+    <Content Include="home\InqHome.aspx" />
+    <Content Include="home\PurchHome.aspx" />
+    <Content Include="images\btn_post.png" />
+    <Content Include="images\btn_post_m.png" />
+    <Content Include="images\FooterImg.JPG" />
+    <Content Include="images\minus.png" />
+    <Content Include="images\plus.png" />
+    <Content Include="images\TopImg.JPG" />
+    <Content Include="images\waiting.gif" />
+    <Content Include="images\search-icon-blue.gif" />
+    <Content Include="inquiry\EmailMgt.aspx" />
+    <Content Include="inquiry\PurchaseInquiry.aspx" />
+    <Content Include="InvenRpt\PartyWiseSalesTax.aspx" />
+    <Content Include="InvenRpt\SalesTaxItemsReport.aspx" />
+    <Content Include="InvenRpt\PartyWiseUnallocatedFunds.aspx" />
+    <Content Include="InvenRpt\PartyWiseUnpaidReport.aspx" />
+    <Content Include="Inv\InvCancelMRN.aspx" />
+    <Content Include="Inv\InvCancelGP.aspx" />
+    <Content Include="Inv\InvCancelMPN.aspx" />
+    <Content Include="Inv\InvSettlement.aspx" />
+    <Content Include="Inv\PostConsumption.aspx" />
+    <Content Include="LogFiles\search-icon-blue.gif" />
+    <Content Include="Login.aspx" />
+    <Content Include="profile\AddtionalAllDdd.aspx" />
+    <Content Include="profile\AttendanceForm.aspx" />
+    <Content Include="profile\Employee.aspx" />
+    <Content Include="profile\EmpMgtReport.aspx" />
+    <Content Include="profile\EmpSalaryPackage.aspx" />
+    <Content Include="profile\InterComminication.aspx" />
+    <Content Include="profile\Practice.aspx" />
+    <Content Include="profile\ProvidentFund.aspx" />
+    <Content Include="profile\Record.aspx" />
+    <Content Include="profile\SalarySummary.aspx" />
+    <Content Include="profile\Seepicture.aspx" />
+    <Content Include="profile\SeePictureExpe.aspx" />
+    <Content Include="report\AttenReport.aspx" />
+    <Content Include="report\CpfDeductionfromsal.aspx" />
+    <Content Include="report\EmpAcrRecord.aspx" />
+    <Content Include="report\EmpAcrRecordDetail.aspx" />
+    <Content Include="report\EmpRelievingReport.aspx" />
+    <Content Include="report\EmpContactReport.aspx" />
+    <Content Include="report\EmpEnqLitiDetailReport.aspx" />
+    <Content Include="report\EmpEnquiryLitigationReport.aspx" />
+    <Content Include="report\EmpLitigationDetailReport.aspx" />
+    <Content Include="report\EmployeeProfileDetailReport.aspx" />
+    <Content Include="report\EmployeeProfileReport.aspx" />
+    <Content Include="report\EmpPermotionReport.aspx" />
+    <Content Include="report\EmpPriorExpDetailReport.aspx" />
+    <Content Include="report\EmpPriorExpReport.aspx" />
+    <Content Include="report\EmpPromotionDetailReport.aspx" />
+    <Content Include="report\EmpTenureExpDetReport.aspx" />
+    <Content Include="report\EmpTenureExpReport.aspx" />
+    <Content Include="report\IncomeTaxDeductionfromsalary.aspx" />
+    <Content Include="report\QualificationDetailReport.aspx" />
+    <Content Include="report\QualificationReport.aspx" />
+    <Content Include="report\SalaryReconReport2.aspx" />
+    <Content Include="report\SalarySheetConsoledated.aspx" />
+    <Content Include="report\SalarySummaryReport.aspx" />
+    <Content Include="sales\RptStatementOfAc.aspx" />
+    <Content Include="sales\RptRecAge.aspx" />
+    <Content Include="sales\RptConsSalesReport.aspx" />
+    <Content Include="sales\RptSalesReport.aspx" />
+    <Content Include="sales\RecSettlement.aspx" />
+    <Content Include="Scripts\jquery1.11.4-ui.css" />
+    <Content Include="Scripts\jquery1.11.4-ui.min.js" />
+    <Content Include="Scripts\jquery1.12.0.min.js" />
+    <Content Include="setup\EmpScaleMgt.aspx" />
+    <Content Include="setup\SalaryContent.aspx" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UserControl\Messages.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\PageTitlesResource.designer.cs">
+      <DependentUpon>PageTitlesResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\MainResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainResource.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="App_GlobalResources\MiscMsgs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MiscMsgs.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BranchEnum.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="GLSetup\ADPScheme.aspx.cs">
+      <DependentUpon>ADPScheme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\ADPScheme.aspx.designer.cs">
+      <DependentUpon>ADPScheme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\ADPSchemeReport.aspx.cs">
+      <DependentUpon>ADPSchemeReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\ADPSchemeReport.aspx.designer.cs">
+      <DependentUpon>ADPSchemeReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\ArtsClassesStudent.aspx.cs">
+      <DependentUpon>ArtsClassesStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\ArtsClassesStudent.aspx.designer.cs">
+      <DependentUpon>ArtsClassesStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\BankWiseExpense.aspx.cs">
+      <DependentUpon>BankWiseExpense.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\BankWiseExpense.aspx.designer.cs">
+      <DependentUpon>BankWiseExpense.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\BmFarm11.aspx.cs">
+      <DependentUpon>BmFarm11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\BmFarm11.aspx.designer.cs">
+      <DependentUpon>BmFarm11.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\BmFarm10.aspx.cs">
+      <DependentUpon>BmFarm10.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\BmFarm10.aspx.designer.cs">
+      <DependentUpon>BmFarm10.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\ExcessSsurrendertwo.aspx.cs">
+      <DependentUpon>ExcessSsurrendertwo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\ExcessSsurrendertwo.aspx.designer.cs">
+      <DependentUpon>ExcessSsurrendertwo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\ExcessSsurrender.aspx.cs">
+      <DependentUpon>ExcessSsurrender.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\ExcessSsurrender.aspx.designer.cs">
+      <DependentUpon>ExcessSsurrender.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\DeveBudget.aspx.cs">
+      <DependentUpon>DeveBudget.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\DeveBudget.aspx.designer.cs">
+      <DependentUpon>DeveBudget.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\BudgetScheduleNewExpenReport.aspx.cs">
+      <DependentUpon>BudgetScheduleNewExpenReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\BudgetScheduleNewExpenReport.aspx.designer.cs">
+      <DependentUpon>BudgetScheduleNewExpenReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\CouncilCourtCases.aspx.cs">
+      <DependentUpon>CouncilCourtCases.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\CouncilCourtCases.aspx.designer.cs">
+      <DependentUpon>CouncilCourtCases.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\DistGrntAmounAllCouReport.aspx.cs">
+      <DependentUpon>DistGrntAmounAllCouReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\DistGrntAmounAllCouReport.aspx.designer.cs">
+      <DependentUpon>DistGrntAmounAllCouReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\ExceSurrReport.aspx.cs">
+      <DependentUpon>ExceSurrReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\ExceSurrReport.aspx.designer.cs">
+      <DependentUpon>ExceSurrReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\ExpenditureStatement.aspx.cs">
+      <DependentUpon>ExpenditureStatement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\ExpenditureStatement.aspx.designer.cs">
+      <DependentUpon>ExpenditureStatement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\DistGrantAidCoucil.aspx.cs">
+      <DependentUpon>DistGrantAidCoucil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\DistGrantAidCoucil.aspx.designer.cs">
+      <DependentUpon>DistGrantAidCoucil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\ApprovedBudget.aspx.cs">
+      <DependentUpon>ApprovedBudget.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\ApprovedBudget.aspx.designer.cs">
+      <DependentUpon>ApprovedBudget.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\ApprovedBudgetReport.aspx.cs">
+      <DependentUpon>ApprovedBudgetReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\ApprovedBudgetReport.aspx.designer.cs">
+      <DependentUpon>ApprovedBudgetReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\BudgetScheduleNewExpen.aspx.cs">
+      <DependentUpon>BudgetScheduleNewExpen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\BudgetScheduleNewExpen.aspx.designer.cs">
+      <DependentUpon>BudgetScheduleNewExpen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\DramaInfo.aspx.cs">
+      <DependentUpon>DramaInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\DramaInfo.aspx.designer.cs">
+      <DependentUpon>DramaInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\AppBudVsAllocation.aspx.cs">
+      <DependentUpon>AppBudVsAllocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\AppBudVsAllocation.aspx.designer.cs">
+      <DependentUpon>AppBudVsAllocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\ApproperiationReport.aspx.cs">
+      <DependentUpon>ApproperiationReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\ApproperiationReport.aspx.designer.cs">
+      <DependentUpon>ApproperiationReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\PostAuditReport.aspx.cs">
+      <DependentUpon>PostAuditReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\PostAuditReport.aspx.designer.cs">
+      <DependentUpon>PostAuditReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\ExpenditureStatementReport.aspx.cs">
+      <DependentUpon>ExpenditureStatementReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\ExpenditureStatementReport.aspx.designer.cs">
+      <DependentUpon>ExpenditureStatementReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\ExpStatMonthWise.aspx.cs">
+      <DependentUpon>ExpStatMonthWise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\ExpStatMonthWise.aspx.designer.cs">
+      <DependentUpon>ExpStatMonthWise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\ExpVsAllocationReport.aspx.cs">
+      <DependentUpon>ExpVsAllocationReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\ExpVsAllocationReport.aspx.designer.cs">
+      <DependentUpon>ExpVsAllocationReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\SNEAvsAllocation.aspx.cs">
+      <DependentUpon>SNEAvsAllocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\SNEAvsAllocation.aspx.designer.cs">
+      <DependentUpon>SNEAvsAllocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\SNEvdAllocationReport.aspx.cs">
+      <DependentUpon>SNEvdAllocationReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\SNEvdAllocationReport.aspx.designer.cs">
+      <DependentUpon>SNEvdAllocationReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\TaxPayableReport.aspx.cs">
+      <DependentUpon>TaxPayableReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\TaxPayableReport.aspx.designer.cs">
+      <DependentUpon>TaxPayableReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\SNEDemandReport.aspx.cs">
+      <DependentUpon>SNEDemandReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\SNEDemandReport.aspx.designer.cs">
+      <DependentUpon>SNEDemandReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\GrantReleaseDivisionsReport.aspx.cs">
+      <DependentUpon>GrantReleaseDivisionsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\GrantReleaseDivisionsReport.aspx.designer.cs">
+      <DependentUpon>GrantReleaseDivisionsReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\HeadWiseDivisionReport.aspx.cs">
+      <DependentUpon>HeadWiseDivisionReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\HeadWiseDivisionReport.aspx.designer.cs">
+      <DependentUpon>HeadWiseDivisionReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\GrantReleaseReport.aspx.cs">
+      <DependentUpon>GrantReleaseReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\GrantReleaseReport.aspx.designer.cs">
+      <DependentUpon>GrantReleaseReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\GrantRelease.aspx.cs">
+      <DependentUpon>GrantRelease.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\GrantRelease.aspx.designer.cs">
+      <DependentUpon>GrantRelease.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\Budget.aspx.cs">
+      <DependentUpon>Budget.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\Budget.aspx.designer.cs">
+      <DependentUpon>Budget.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\BudgetReport.aspx.cs">
+      <DependentUpon>BudgetReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\BudgetReport.aspx.designer.cs">
+      <DependentUpon>BudgetReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\SNEApproved.aspx.cs">
+      <DependentUpon>SNEApproved.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\SNEApproved.aspx.designer.cs">
+      <DependentUpon>SNEApproved.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\TextPayable.aspx.cs">
+      <DependentUpon>TextPayable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\TextPayable.aspx.designer.cs">
+      <DependentUpon>TextPayable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\TheaterInfor.aspx.cs">
+      <DependentUpon>TheaterInfor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\TheaterInfor.aspx.designer.cs">
+      <DependentUpon>TheaterInfor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\TheatreInfoReport.aspx.cs">
+      <DependentUpon>TheatreInfoReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\TheatreInfoReport.aspx.designer.cs">
+      <DependentUpon>TheatreInfoReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\Voucher.aspx.cs">
+      <DependentUpon>Voucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\Voucher.aspx.designer.cs">
+      <DependentUpon>Voucher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home\GLHomeBudCharts.aspx.cs">
+      <DependentUpon>GLHomeBudCharts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home\GLHomeBudCharts.aspx.designer.cs">
+      <DependentUpon>GLHomeBudCharts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home\GLHomecopy.aspx.cs">
+      <DependentUpon>GLHomecopy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home\GLHomecopy.aspx.designer.cs">
+      <DependentUpon>GLHomecopy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home\RMSMasterHomeOriginal.Master.cs">
+      <DependentUpon>RMSMasterHomeOriginal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home\RMSMasterHomeOriginal.Master.designer.cs">
+      <DependentUpon>RMSMasterHomeOriginal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Number.cs" />
+    <Compile Include="GLSetup\frmChequePrint.aspx.cs">
+      <DependentUpon>frmChequePrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmChequePrint.aspx.designer.cs">
+      <DependentUpon>frmChequePrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmBankPaymentAdvice.aspx.cs">
+      <DependentUpon>frmBankPaymentAdvice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmBankPaymentAdvice.aspx.designer.cs">
+      <DependentUpon>frmBankPaymentAdvice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateLog.cs" />
+    <Compile Include="GLSetup\frmCcGrp.aspx.cs">
+      <DependentUpon>frmCcGrp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmCcGrp.aspx.designer.cs">
+      <DependentUpon>frmCcGrp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmFinancialReportRpt.aspx.cs">
+      <DependentUpon>frmFinancialReportRpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmFinancialReportRpt.aspx.designer.cs">
+      <DependentUpon>frmFinancialReportRpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmReportParameter_Old.aspx.cs">
+      <DependentUpon>frmReportParameter_Old.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmReportParameter_Old.aspx.designer.cs">
+      <DependentUpon>frmReportParameter_Old.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\MonthlyCCAcDet.aspx.cs">
+      <DependentUpon>MonthlyCCAcDet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\MonthlyCCAcDet.aspx.designer.cs">
+      <DependentUpon>MonthlyCCAcDet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\MonthlyCCAc.aspx.cs">
+      <DependentUpon>MonthlyCCAc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\MonthlyCCAc.aspx.designer.cs">
+      <DependentUpon>MonthlyCCAc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmCC.aspx.cs">
+      <DependentUpon>frmCC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmCC.aspx.designer.cs">
+      <DependentUpon>frmCC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmChqClearanceRpt.aspx.cs">
+      <DependentUpon>frmChqClearanceRpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmChqClearanceRpt.aspx.designer.cs">
+      <DependentUpon>frmChqClearanceRpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmChqClearance.aspx.cs">
+      <DependentUpon>frmChqClearance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmChqClearance.aspx.designer.cs">
+      <DependentUpon>frmChqClearance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmGLYear.aspx.cs">
+      <DependentUpon>frmGLYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmGLYear.aspx.designer.cs">
+      <DependentUpon>frmGLYear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmGLVoucherUnpost.aspx.cs">
+      <DependentUpon>frmGLVoucherUnpost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmGLVoucherUnpost.aspx.designer.cs">
+      <DependentUpon>frmGLVoucherUnpost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmLedgerCardSummary.aspx.cs">
+      <DependentUpon>frmLedgerCardSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmLedgerCardSummary.aspx.designer.cs">
+      <DependentUpon>frmLedgerCardSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmGLAccInfo.aspx.cs">
+      <DependentUpon>frmGLAccInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmGLAccInfo.aspx.designer.cs">
+      <DependentUpon>frmGLAccInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmGLCashBook.aspx.cs">
+      <DependentUpon>frmGLCashBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmGLCashBook.aspx.designer.cs">
+      <DependentUpon>frmGLCashBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmGLVoucher.aspx.cs">
+      <DependentUpon>frmGLVoucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmGLVoucher.aspx.designer.cs">
+      <DependentUpon>frmGLVoucher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmCCAccount.aspx.cs">
+      <DependentUpon>frmCCAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmCCAccount.aspx.designer.cs">
+      <DependentUpon>frmCCAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmSearchVoucher.aspx.cs">
+      <DependentUpon>frmSearchVoucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmSearchVoucher.aspx.designer.cs">
+      <DependentUpon>frmSearchVoucher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmFinancialReportRpt_New.aspx.cs">
+      <DependentUpon>frmFinancialReportRpt_New.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmFinancialReportRpt_New.aspx.designer.cs">
+      <DependentUpon>frmFinancialReportRpt_New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmGlLvlCodeAutoGenCode.aspx.cs">
+      <DependentUpon>frmGlLvlCodeAutoGenCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmGlLvlCodeAutoGenCode.aspx.designer.cs">
+      <DependentUpon>frmGlLvlCodeAutoGenCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmReportParameterView.aspx.cs">
+      <DependentUpon>frmReportParameterView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmReportParameterView.aspx.designer.cs">
+      <DependentUpon>frmReportParameterView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmReportParameterHome.aspx.cs">
+      <DependentUpon>frmReportParameterHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmReportParameterHome.aspx.designer.cs">
+      <DependentUpon>frmReportParameterHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmBgtListRpt.aspx.cs">
+      <DependentUpon>frmBgtListRpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmBgtListRpt.aspx.designer.cs">
+      <DependentUpon>frmBgtListRpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmBgtVarianceRpt.aspx.cs">
+      <DependentUpon>frmBgtVarianceRpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmBgtVarianceRpt.aspx.designer.cs">
+      <DependentUpon>frmBgtVarianceRpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmBudgetEntry.aspx.cs">
+      <DependentUpon>frmBudgetEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmBudgetEntry.aspx.designer.cs">
+      <DependentUpon>frmBudgetEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\GlRptDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlRptDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="GLSetup\frmGlLvlCode.aspx.cs">
+      <DependentUpon>frmGlLvlCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmGlLvlCode.aspx.designer.cs">
+      <DependentUpon>frmGlLvlCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\NewfrmGlBudgetSetup.aspx.cs">
+      <DependentUpon>NewfrmGlBudgetSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\NewfrmGlBudgetSetup.aspx.designer.cs">
+      <DependentUpon>NewfrmGlBudgetSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmLedgerCardCond.aspx.cs">
+      <DependentUpon>frmLedgerCardCond.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmLedgerCardCond.aspx.designer.cs">
+      <DependentUpon>frmLedgerCardCond.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmThicknessSetup.aspx.cs">
+      <DependentUpon>frmThicknessSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmThicknessSetup.aspx.designer.cs">
+      <DependentUpon>frmThicknessSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmColorSetup.aspx.cs">
+      <DependentUpon>frmColorSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmColorSetup.aspx.designer.cs">
+      <DependentUpon>frmColorSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmDesignSetup.aspx.cs">
+      <DependentUpon>frmDesignSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmDesignSetup.aspx.designer.cs">
+      <DependentUpon>frmDesignSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmGLCOA.aspx.cs">
+      <DependentUpon>frmGLCOA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmGLCOA.aspx.designer.cs">
+      <DependentUpon>frmGLCOA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmGl_Code.aspx.cs">
+      <DependentUpon>frmGl_Code.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmGl_Code.aspx.designer.cs">
+      <DependentUpon>frmGl_Code.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmGl_Type.aspx.cs">
+      <DependentUpon>frmGl_Type.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmGl_Type.aspx.designer.cs">
+      <DependentUpon>frmGl_Type.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmLedgerCard.aspx.cs">
+      <DependentUpon>frmLedgerCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmLedgerCard.aspx.designer.cs">
+      <DependentUpon>frmLedgerCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmPreferences.aspx.cs">
+      <DependentUpon>frmPreferences.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmPreferences.aspx.designer.cs">
+      <DependentUpon>frmPreferences.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmReportParameter.aspx.cs">
+      <DependentUpon>frmReportParameter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmReportParameter.aspx.designer.cs">
+      <DependentUpon>frmReportParameter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmViewVoucher.aspx.cs">
+      <DependentUpon>frmViewVoucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmViewVoucher.aspx.designer.cs">
+      <DependentUpon>frmViewVoucher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmVoucherDetail.aspx.cs">
+      <DependentUpon>frmVoucherDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmVoucherDetail.aspx.designer.cs">
+      <DependentUpon>frmVoucherDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmVoucherHome.aspx.cs">
+      <DependentUpon>frmVoucherHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmVoucherHome.aspx.designer.cs">
+      <DependentUpon>frmVoucherHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\frmVoucherSummary.aspx.cs">
+      <DependentUpon>frmVoucherSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\frmVoucherSummary.aspx.designer.cs">
+      <DependentUpon>frmVoucherSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\ViewLedgerCard.aspx.cs">
+      <DependentUpon>ViewLedgerCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\ViewLedgerCard.aspx.designer.cs">
+      <DependentUpon>ViewLedgerCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLSetup\Vouchers.aspx.cs">
+      <DependentUpon>Vouchers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLSetup\Vouchers.aspx.designer.cs">
+      <DependentUpon>Vouchers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GridViewExportUtil.cs" />
+    <Compile Include="GridViewTemplate.cs" />
+    <Compile Include="HomeSelection.aspx.cs">
+      <DependentUpon>HomeSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeSelection.aspx.designer.cs">
+      <DependentUpon>HomeSelection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home\AdminHome.aspx.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home\AdminHome.aspx.designer.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home\InqHome.aspx.cs">
+      <DependentUpon>InqHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home\InqHome.aspx.designer.cs">
+      <DependentUpon>InqHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home\PurchHome.aspx.cs">
+      <DependentUpon>PurchHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home\PurchHome.aspx.designer.cs">
+      <DependentUpon>PurchHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home\SalesHome.aspx.cs">
+      <DependentUpon>SalesHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home\SalesHome.aspx.designer.cs">
+      <DependentUpon>SalesHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home\InvenHome.aspx.cs">
+      <DependentUpon>InvenHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home\InvenHome.aspx.designer.cs">
+      <DependentUpon>InvenHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home\InvHome.aspx.cs">
+      <DependentUpon>InvHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home\InvHome.aspx.designer.cs">
+      <DependentUpon>InvHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home\GLHome.aspx.cs">
+      <DependentUpon>GLHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home\GLHome.aspx.designer.cs">
+      <DependentUpon>GLHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home\RMSMasterHome.Master.cs">
+      <DependentUpon>RMSMasterHome.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home\RMSMasterHome.Master.designer.cs">
+      <DependentUpon>RMSMasterHome.Master</DependentUpon>
+    </Compile>
+    <Compile Include="home\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inquiry\EmailMgt.aspx.cs">
+      <DependentUpon>EmailMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inquiry\EmailMgt.aspx.designer.cs">
+      <DependentUpon>EmailMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inquiry\PurchaseInquiry.aspx.cs">
+      <DependentUpon>PurchaseInquiry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inquiry\PurchaseInquiry.aspx.designer.cs">
+      <DependentUpon>PurchaseInquiry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvenRpt\ComparativeStockStatusReport.aspx.cs">
+      <DependentUpon>ComparativeStockStatusReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvenRpt\ComparativeStockStatusReport.aspx.designer.cs">
+      <DependentUpon>ComparativeStockStatusReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvenRpt\PartyWiseSalesTax.aspx.cs">
+      <DependentUpon>PartyWiseSalesTax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvenRpt\PartyWiseSalesTax.aspx.designer.cs">
+      <DependentUpon>PartyWiseSalesTax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvenRpt\SalesTaxItemsReport.aspx.cs">
+      <DependentUpon>SalesTaxItemsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvenRpt\SalesTaxItemsReport.aspx.designer.cs">
+      <DependentUpon>SalesTaxItemsReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvenRpt\PartyWiseUnallocatedFunds.aspx.cs">
+      <DependentUpon>PartyWiseUnallocatedFunds.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvenRpt\PartyWiseUnallocatedFunds.aspx.designer.cs">
+      <DependentUpon>PartyWiseUnallocatedFunds.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvenRpt\PartyWiseUnpaidReport.aspx.cs">
+      <DependentUpon>PartyWiseUnpaidReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvenRpt\PartyWiseUnpaidReport.aspx.designer.cs">
+      <DependentUpon>PartyWiseUnpaidReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvenRpt\LastPriceReport.aspx.cs">
+      <DependentUpon>LastPriceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvenRpt\LastPriceReport.aspx.designer.cs">
+      <DependentUpon>LastPriceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvenRpt\PurchOrderStatus.aspx.cs">
+      <DependentUpon>PurchOrderStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvenRpt\PurchOrderStatus.aspx.designer.cs">
+      <DependentUpon>PurchOrderStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvenRpt\CriticaltemsList.aspx.cs">
+      <DependentUpon>CriticaltemsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvenRpt\CriticaltemsList.aspx.designer.cs">
+      <DependentUpon>CriticaltemsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvenRpt\SlowMovingItemsList.aspx.cs">
+      <DependentUpon>SlowMovingItemsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvenRpt\SlowMovingItemsList.aspx.designer.cs">
+      <DependentUpon>SlowMovingItemsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvenRpt\ItemsChartReport.aspx.cs">
+      <DependentUpon>ItemsChartReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvenRpt\ItemsChartReport.aspx.designer.cs">
+      <DependentUpon>ItemsChartReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvenRpt\MonthlyDemandReport.aspx.cs">
+      <DependentUpon>MonthlyDemandReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvenRpt\MonthlyDemandReport.aspx.designer.cs">
+      <DependentUpon>MonthlyDemandReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvenRpt\ItemWiseStockMovementReport.aspx.cs">
+      <DependentUpon>ItemWiseStockMovementReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvenRpt\ItemWiseStockMovementReport.aspx.designer.cs">
+      <DependentUpon>ItemWiseStockMovementReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvenRpt\InvenStockLedgerReport.aspx.cs">
+      <DependentUpon>InvenStockLedgerReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvenRpt\InvenStockLedgerReport.aspx.designer.cs">
+      <DependentUpon>InvenStockLedgerReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvenRpt\InvenStockStatusReport.aspx.cs">
+      <DependentUpon>InvenStockStatusReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvenRpt\InvenStockStatusReport.aspx.designer.cs">
+      <DependentUpon>InvenStockStatusReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvenRpt\InvenDeptWiseConsumptionReport.aspx.cs">
+      <DependentUpon>InvenDeptWiseConsumptionReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvenRpt\InvenDeptWiseConsumptionReport.aspx.designer.cs">
+      <DependentUpon>InvenDeptWiseConsumptionReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvenRpt\ItemWiseStkPurchBookReport.aspx.cs">
+      <DependentUpon>ItemWiseStkPurchBookReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvenRpt\ItemWiseStkPurchBookReport.aspx.designer.cs">
+      <DependentUpon>ItemWiseStkPurchBookReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvenRpt\PartyWiseStkPurchBookReport.aspx.cs">
+      <DependentUpon>PartyWiseStkPurchBookReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvenRpt\PartyWiseStkPurchBookReport.aspx.designer.cs">
+      <DependentUpon>PartyWiseStkPurchBookReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvReports\RawHideLotReport.aspx.cs">
+      <DependentUpon>RawHideLotReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvReports\RawHideLotReport.aspx.designer.cs">
+      <DependentUpon>RawHideLotReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvReports\IGPPrintReport.aspx.cs">
+      <DependentUpon>IGPPrintReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvReports\IGPPrintReport.aspx.designer.cs">
+      <DependentUpon>IGPPrintReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvReports\PartyWiseRawHidePurchBookReport.aspx.cs">
+      <DependentUpon>PartyWiseRawHidePurchBookReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvReports\PartyWiseRawHidePurchBookReport.aspx.designer.cs">
+      <DependentUpon>PartyWiseRawHidePurchBookReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvReports\PayablesReport.aspx.cs">
+      <DependentUpon>PayablesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvReports\PayablesReport.aspx.designer.cs">
+      <DependentUpon>PayablesReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvReports\WetBlueStkLedgherReport.aspx.cs">
+      <DependentUpon>WetBlueStkLedgherReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvReports\WetBlueStkLedgherReport.aspx.designer.cs">
+      <DependentUpon>WetBlueStkLedgherReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetupSupport\AutoCompleteSearch.asmx.cs">
+      <DependentUpon>AutoCompleteSearch.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InvSetupSupport\ViewIgp.aspx.cs">
+      <DependentUpon>ViewIgp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetupSupport\ViewIgp.aspx.designer.cs">
+      <DependentUpon>ViewIgp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\DispatchView.aspx.cs">
+      <DependentUpon>DispatchView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\DispatchView.aspx.designer.cs">
+      <DependentUpon>DispatchView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\DispatchrHome.aspx.cs">
+      <DependentUpon>DispatchrHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\DispatchrHome.aspx.designer.cs">
+      <DependentUpon>DispatchrHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\DispatchMgt.aspx.cs">
+      <DependentUpon>DispatchMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\DispatchMgt.aspx.designer.cs">
+      <DependentUpon>DispatchMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\CrustDeptTrnsfrView.aspx.cs">
+      <DependentUpon>CrustDeptTrnsfrView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\CrustDeptTrnsfrView.aspx.designer.cs">
+      <DependentUpon>CrustDeptTrnsfrView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\MaterialPurchaseNoteViewNew.aspx.cs">
+      <DependentUpon>MaterialPurchaseNoteViewNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\MaterialPurchaseNoteViewNew.aspx.designer.cs">
+      <DependentUpon>MaterialPurchaseNoteViewNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\ChangeLot.aspx.cs">
+      <DependentUpon>ChangeLot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\ChangeLot.aspx.designer.cs">
+      <DependentUpon>ChangeLot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\SizingGradingCardView.aspx.cs">
+      <DependentUpon>SizingGradingCardView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\SizingGradingCardView.aspx.designer.cs">
+      <DependentUpon>SizingGradingCardView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\SizingGradingHome2.aspx.cs">
+      <DependentUpon>SizingGradingHome2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\SizingGradingHome2.aspx.designer.cs">
+      <DependentUpon>SizingGradingHome2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\SizingGradingCardMgt2.aspx.cs">
+      <DependentUpon>SizingGradingCardMgt2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\SizingGradingCardMgt2.aspx.designer.cs">
+      <DependentUpon>SizingGradingCardMgt2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\WetBlueTrnsfrView.aspx.cs">
+      <DependentUpon>WetBlueTrnsfrView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\WetBlueTrnsfrView.aspx.designer.cs">
+      <DependentUpon>WetBlueTrnsfrView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\MaterialPurchaseNoteHomeNew.aspx.cs">
+      <DependentUpon>MaterialPurchaseNoteHomeNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\MaterialPurchaseNoteHomeNew.aspx.designer.cs">
+      <DependentUpon>MaterialPurchaseNoteHomeNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\MaterialPurchaseNoteMgtNew.aspx.cs">
+      <DependentUpon>MaterialPurchaseNoteMgtNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\MaterialPurchaseNoteMgtNew.aspx.designer.cs">
+      <DependentUpon>MaterialPurchaseNoteMgtNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\MaterialPurchaseNoteView.aspx.cs">
+      <DependentUpon>MaterialPurchaseNoteView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\MaterialPurchaseNoteView.aspx.designer.cs">
+      <DependentUpon>MaterialPurchaseNoteView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\SizingGradingCardMgt1.aspx.cs">
+      <DependentUpon>SizingGradingCardMgt1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\SizingGradingCardMgt1.aspx.designer.cs">
+      <DependentUpon>SizingGradingCardMgt1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\SizingGradingHome1.aspx.cs">
+      <DependentUpon>SizingGradingHome1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\SizingGradingHome1.aspx.designer.cs">
+      <DependentUpon>SizingGradingHome1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\GradingCardView.aspx.cs">
+      <DependentUpon>GradingCardView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\GradingCardView.aspx.designer.cs">
+      <DependentUpon>GradingCardView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\MaterialTrnsfrNtView.aspx.cs">
+      <DependentUpon>MaterialTrnsfrNtView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\MaterialTrnsfrNtView.aspx.designer.cs">
+      <DependentUpon>MaterialTrnsfrNtView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\InwardGatePassView.aspx.cs">
+      <DependentUpon>InwardGatePassView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\InwardGatePassView.aspx.designer.cs">
+      <DependentUpon>InwardGatePassView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\CrustDeptTrnsfrHome.aspx.cs">
+      <DependentUpon>CrustDeptTrnsfrHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\CrustDeptTrnsfrHome.aspx.designer.cs">
+      <DependentUpon>CrustDeptTrnsfrHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\CrustDeptTrnsfrMgt.aspx.cs">
+      <DependentUpon>CrustDeptTrnsfrMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\CrustDeptTrnsfrMgt.aspx.designer.cs">
+      <DependentUpon>CrustDeptTrnsfrMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\WetBlueTrnsfrMgt.aspx.cs">
+      <DependentUpon>WetBlueTrnsfrMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\WetBlueTrnsfrMgt.aspx.designer.cs">
+      <DependentUpon>WetBlueTrnsfrMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\WetBlueTrnsfrHome.aspx.cs">
+      <DependentUpon>WetBlueTrnsfrHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\WetBlueTrnsfrHome.aspx.designer.cs">
+      <DependentUpon>WetBlueTrnsfrHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvReports\BrokerWiseRawHidePurchBookReport.aspx.cs">
+      <DependentUpon>BrokerWiseRawHidePurchBookReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvReports\BrokerWiseRawHidePurchBookReport.aspx.designer.cs">
+      <DependentUpon>BrokerWiseRawHidePurchBookReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvReports\WetBlueStockReport.aspx.cs">
+      <DependentUpon>WetBlueStockReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvReports\WetBlueStockReport.aspx.designer.cs">
+      <DependentUpon>WetBlueStockReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvReports\WetBlueProcPosReport.aspx.cs">
+      <DependentUpon>WetBlueProcPosReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvReports\WetBlueProcPosReport.aspx.designer.cs">
+      <DependentUpon>WetBlueProcPosReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvReports\RawHideStockReport.aspx.cs">
+      <DependentUpon>RawHideStockReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvReports\RawHideStockReport.aspx.designer.cs">
+      <DependentUpon>RawHideStockReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\MaterialPurchaseNoteMgt.aspx.cs">
+      <DependentUpon>MaterialPurchaseNoteMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\MaterialPurchaseNoteMgt.aspx.designer.cs">
+      <DependentUpon>MaterialPurchaseNoteMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\MaterialPurchaseNoteHome.aspx.cs">
+      <DependentUpon>MaterialPurchaseNoteHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\MaterialPurchaseNoteHome.aspx.designer.cs">
+      <DependentUpon>MaterialPurchaseNoteHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\GradingCardMgt.aspx.cs">
+      <DependentUpon>GradingCardMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\GradingCardMgt.aspx.designer.cs">
+      <DependentUpon>GradingCardMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\GradingCardHome.aspx.cs">
+      <DependentUpon>GradingCardHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\GradingCardHome.aspx.designer.cs">
+      <DependentUpon>GradingCardHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\MaterialTrnsfrNtMgt.aspx.cs">
+      <DependentUpon>MaterialTrnsfrNtMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\MaterialTrnsfrNtMgt.aspx.designer.cs">
+      <DependentUpon>MaterialTrnsfrNtMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\MaterialTrnsfrNtHome.aspx.cs">
+      <DependentUpon>MaterialTrnsfrNtHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\MaterialTrnsfrNtHome.aspx.designer.cs">
+      <DependentUpon>MaterialTrnsfrNtHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\InwardGatePassHome.aspx.cs">
+      <DependentUpon>InwardGatePassHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\InwardGatePassHome.aspx.designer.cs">
+      <DependentUpon>InwardGatePassHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\SizingGradingCardMgt.aspx.cs">
+      <DependentUpon>SizingGradingCardMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\SizingGradingCardMgt.aspx.designer.cs">
+      <DependentUpon>SizingGradingCardMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\SizingGradingHome.aspx.cs">
+      <DependentUpon>SizingGradingHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\SizingGradingHome.aspx.designer.cs">
+      <DependentUpon>SizingGradingHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvSetup\InwardGatePassMgt.aspx.cs">
+      <DependentUpon>InwardGatePassMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvSetup\InwardGatePassMgt.aspx.designer.cs">
+      <DependentUpon>InwardGatePassMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\AdjNote.aspx.cs">
+      <DependentUpon>AdjNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\AdjNote.aspx.designer.cs">
+      <DependentUpon>AdjNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\InvCancelMRN.aspx.cs">
+      <DependentUpon>InvCancelMRN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\InvCancelMRN.aspx.designer.cs">
+      <DependentUpon>InvCancelMRN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\InvCancelGP.aspx.cs">
+      <DependentUpon>InvCancelGP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\InvCancelGP.aspx.designer.cs">
+      <DependentUpon>InvCancelGP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\InvCancelMPN.aspx.cs">
+      <DependentUpon>InvCancelMPN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\InvCancelMPN.aspx.designer.cs">
+      <DependentUpon>InvCancelMPN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\InvSettlement.aspx.cs">
+      <DependentUpon>InvSettlement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\InvSettlement.aspx.designer.cs">
+      <DependentUpon>InvSettlement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\PostConsumption.aspx.cs">
+      <DependentUpon>PostConsumption.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\PostConsumption.aspx.designer.cs">
+      <DependentUpon>PostConsumption.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\POClosureMgt.aspx.cs">
+      <DependentUpon>POClosureMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\POClosureMgt.aspx.designer.cs">
+      <DependentUpon>POClosureMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\PORevMgt.aspx.cs">
+      <DependentUpon>PORevMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\PORevMgt.aspx.designer.cs">
+      <DependentUpon>PORevMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\STNRecMgt.aspx.cs">
+      <DependentUpon>STNRecMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\STNRecMgt.aspx.designer.cs">
+      <DependentUpon>STNRecMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\ItemCode1.aspx.cs">
+      <DependentUpon>ItemCode1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\ItemCode1.aspx.designer.cs">
+      <DependentUpon>ItemCode1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\STNMgt.aspx.cs">
+      <DependentUpon>STNMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\STNMgt.aspx.designer.cs">
+      <DependentUpon>STNMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChequeOperations.cs" />
+    <Compile Include="profile\AddtionalAllDdd.aspx.cs">
+      <DependentUpon>AddtionalAllDdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\AddtionalAllDdd.aspx.designer.cs">
+      <DependentUpon>AddtionalAllDdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\AttendanceForm.aspx.cs">
+      <DependentUpon>AttendanceForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\AttendanceForm.aspx.designer.cs">
+      <DependentUpon>AttendanceForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\Employee.aspx.cs">
+      <DependentUpon>Employee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\Employee.aspx.designer.cs">
+      <DependentUpon>Employee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\EmpMgtReport.aspx.cs">
+      <DependentUpon>EmpMgtReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\EmpMgtReport.aspx.designer.cs">
+      <DependentUpon>EmpMgtReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\EmpSalaryPackage.aspx.cs">
+      <DependentUpon>EmpSalaryPackage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\EmpSalaryPackage.aspx.designer.cs">
+      <DependentUpon>EmpSalaryPackage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\InterComminication.aspx.cs">
+      <DependentUpon>InterComminication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\InterComminication.aspx.designer.cs">
+      <DependentUpon>InterComminication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\Practice.aspx.cs">
+      <DependentUpon>Practice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\Practice.aspx.designer.cs">
+      <DependentUpon>Practice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\ProvidentFund.aspx.cs">
+      <DependentUpon>ProvidentFund.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\ProvidentFund.aspx.designer.cs">
+      <DependentUpon>ProvidentFund.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\Record.aspx.cs">
+      <DependentUpon>Record.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\Record.aspx.designer.cs">
+      <DependentUpon>Record.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\SalarySummary.aspx.cs">
+      <DependentUpon>SalarySummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\SalarySummary.aspx.designer.cs">
+      <DependentUpon>SalarySummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\Seepicture.aspx.cs">
+      <DependentUpon>Seepicture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\Seepicture.aspx.designer.cs">
+      <DependentUpon>Seepicture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\SeePictureExpe.aspx.cs">
+      <DependentUpon>SeePictureExpe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\SeePictureExpe.aspx.designer.cs">
+      <DependentUpon>SeePictureExpe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPrintDocument.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\AttenReport.aspx.cs">
+      <DependentUpon>AttenReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\AttenReport.aspx.designer.cs">
+      <DependentUpon>AttenReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\CpfDeductionfromsal.aspx.cs">
+      <DependentUpon>CpfDeductionfromsal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\CpfDeductionfromsal.aspx.designer.cs">
+      <DependentUpon>CpfDeductionfromsal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\EmpAcrRecord.aspx.cs">
+      <DependentUpon>EmpAcrRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\EmpAcrRecord.aspx.designer.cs">
+      <DependentUpon>EmpAcrRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\EmpAcrRecordDetail.aspx.cs">
+      <DependentUpon>EmpAcrRecordDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\EmpAcrRecordDetail.aspx.designer.cs">
+      <DependentUpon>EmpAcrRecordDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\EmpRelievingReport.aspx.cs">
+      <DependentUpon>EmpRelievingReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\EmpRelievingReport.aspx.designer.cs">
+      <DependentUpon>EmpRelievingReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\EmpContactReport.aspx.cs">
+      <DependentUpon>EmpContactReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\EmpContactReport.aspx.designer.cs">
+      <DependentUpon>EmpContactReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\EmpEnqLitiDetailReport.aspx.cs">
+      <DependentUpon>EmpEnqLitiDetailReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\EmpEnqLitiDetailReport.aspx.designer.cs">
+      <DependentUpon>EmpEnqLitiDetailReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\EmpEnquiryLitigationReport.aspx.cs">
+      <DependentUpon>EmpEnquiryLitigationReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\EmpEnquiryLitigationReport.aspx.designer.cs">
+      <DependentUpon>EmpEnquiryLitigationReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\EmpLitigationDetailReport.aspx.cs">
+      <DependentUpon>EmpLitigationDetailReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\EmpLitigationDetailReport.aspx.designer.cs">
+      <DependentUpon>EmpLitigationDetailReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\EmployeeProfileDetailReport.aspx.cs">
+      <DependentUpon>EmployeeProfileDetailReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\EmployeeProfileDetailReport.aspx.designer.cs">
+      <DependentUpon>EmployeeProfileDetailReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\EmployeeProfileReport.aspx.cs">
+      <DependentUpon>EmployeeProfileReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\EmployeeProfileReport.aspx.designer.cs">
+      <DependentUpon>EmployeeProfileReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\EmpPermotionReport.aspx.cs">
+      <DependentUpon>EmpPermotionReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\EmpPermotionReport.aspx.designer.cs">
+      <DependentUpon>EmpPermotionReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\EmpPriorExpDetailReport.aspx.cs">
+      <DependentUpon>EmpPriorExpDetailReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\EmpPriorExpDetailReport.aspx.designer.cs">
+      <DependentUpon>EmpPriorExpDetailReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\EmpPriorExpReport.aspx.cs">
+      <DependentUpon>EmpPriorExpReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\EmpPriorExpReport.aspx.designer.cs">
+      <DependentUpon>EmpPriorExpReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\EmpPromotionDetailReport.aspx.cs">
+      <DependentUpon>EmpPromotionDetailReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\EmpPromotionDetailReport.aspx.designer.cs">
+      <DependentUpon>EmpPromotionDetailReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\EmpTenureExpDetReport.aspx.cs">
+      <DependentUpon>EmpTenureExpDetReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\EmpTenureExpDetReport.aspx.designer.cs">
+      <DependentUpon>EmpTenureExpDetReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\EmpTenureExpReport.aspx.cs">
+      <DependentUpon>EmpTenureExpReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\EmpTenureExpReport.aspx.designer.cs">
+      <DependentUpon>EmpTenureExpReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\IncomeTaxDeductionfromsalary.aspx.cs">
+      <DependentUpon>IncomeTaxDeductionfromsalary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\IncomeTaxDeductionfromsalary.aspx.designer.cs">
+      <DependentUpon>IncomeTaxDeductionfromsalary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\QualificationDetailReport.aspx.cs">
+      <DependentUpon>QualificationDetailReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\QualificationDetailReport.aspx.designer.cs">
+      <DependentUpon>QualificationDetailReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\QualificationReport.aspx.cs">
+      <DependentUpon>QualificationReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\QualificationReport.aspx.designer.cs">
+      <DependentUpon>QualificationReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\SalaryReconReport2.aspx.cs">
+      <DependentUpon>SalaryReconReport2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\SalaryReconReport2.aspx.designer.cs">
+      <DependentUpon>SalaryReconReport2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\SalarySheetConsoledated.aspx.cs">
+      <DependentUpon>SalarySheetConsoledated.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\SalarySheetConsoledated.aspx.designer.cs">
+      <DependentUpon>SalarySheetConsoledated.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\SalarySummaryReport.aspx.cs">
+      <DependentUpon>SalarySummaryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\SalarySummaryReport.aspx.designer.cs">
+      <DependentUpon>SalarySummaryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sales\AreaCode.aspx.cs">
+      <DependentUpon>AreaCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sales\AreaCode.aspx.designer.cs">
+      <DependentUpon>AreaCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sales\RptStatementOfAc.aspx.cs">
+      <DependentUpon>RptStatementOfAc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sales\RptStatementOfAc.aspx.designer.cs">
+      <DependentUpon>RptStatementOfAc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sales\RptRecAge.aspx.cs">
+      <DependentUpon>RptRecAge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sales\RptRecAge.aspx.designer.cs">
+      <DependentUpon>RptRecAge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sales\RptConsSalesReport.aspx.cs">
+      <DependentUpon>RptConsSalesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sales\RptConsSalesReport.aspx.designer.cs">
+      <DependentUpon>RptConsSalesReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sales\RptSalesReport.aspx.cs">
+      <DependentUpon>RptSalesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sales\RptSalesReport.aspx.designer.cs">
+      <DependentUpon>RptSalesReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sales\RecSettlement.aspx.cs">
+      <DependentUpon>RecSettlement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sales\RecSettlement.aspx.designer.cs">
+      <DependentUpon>RecSettlement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sales\RptRetailerVisitPlan.aspx.cs">
+      <DependentUpon>RptRetailerVisitPlan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sales\RptRetailerVisitPlan.aspx.designer.cs">
+      <DependentUpon>RptRetailerVisitPlan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sales\RetailerVisitPlan.aspx.cs">
+      <DependentUpon>RetailerVisitPlan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sales\RetailerVisitPlan.aspx.designer.cs">
+      <DependentUpon>RetailerVisitPlan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sales\SalesPromotionResponse.aspx.cs">
+      <DependentUpon>SalesPromotionResponse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sales\SalesPromotionResponse.aspx.designer.cs">
+      <DependentUpon>SalesPromotionResponse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sales\SOMgt_Org.aspx.cs">
+      <DependentUpon>SOMgt_Org.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sales\SOMgt_Org.aspx.designer.cs">
+      <DependentUpon>SOMgt_Org.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sales\SaleReq.aspx.cs">
+      <DependentUpon>SaleReq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sales\SaleReq.aspx.designer.cs">
+      <DependentUpon>SaleReq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sales\RptRateAnalysis.aspx.cs">
+      <DependentUpon>RptRateAnalysis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sales\RptRateAnalysis.aspx.designer.cs">
+      <DependentUpon>RptRateAnalysis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sales\RptShipmentSchedule.aspx.cs">
+      <DependentUpon>RptShipmentSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sales\RptShipmentSchedule.aspx.designer.cs">
+      <DependentUpon>RptShipmentSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sales\SOMgt.aspx.cs">
+      <DependentUpon>SOMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sales\SOMgt.aspx.designer.cs">
+      <DependentUpon>SOMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sales\ItemRate.aspx.cs">
+      <DependentUpon>ItemRate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sales\ItemRate.aspx.designer.cs">
+      <DependentUpon>ItemRate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sales\SRNMgt.aspx.cs">
+      <DependentUpon>SRNMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sales\SRNMgt.aspx.designer.cs">
+      <DependentUpon>SRNMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sales\PTNMgt.aspx.cs">
+      <DependentUpon>PTNMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sales\PTNMgt.aspx.designer.cs">
+      <DependentUpon>PTNMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sales\DCNMgt.aspx.cs">
+      <DependentUpon>DCNMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sales\DCNMgt.aspx.designer.cs">
+      <DependentUpon>DCNMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sales\ItemCode.aspx.cs">
+      <DependentUpon>ItemCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sales\ItemCode.aspx.designer.cs">
+      <DependentUpon>ItemCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sales\PTNMgt_Org.aspx.cs">
+      <DependentUpon>PTNMgt_Org.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sales\PTNMgt_Org.aspx.designer.cs">
+      <DependentUpon>PTNMgt_Org.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\Departments.aspx.cs">
+      <DependentUpon>Departments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\Departments.aspx.designer.cs">
+      <DependentUpon>Departments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\StoreLocation.aspx.cs">
+      <DependentUpon>StoreLocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\StoreLocation.aspx.designer.cs">
+      <DependentUpon>StoreLocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\ItemCode.aspx.cs">
+      <DependentUpon>ItemCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\ItemCode.aspx.designer.cs">
+      <DependentUpon>ItemCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\StoreRetMgt.aspx.cs">
+      <DependentUpon>StoreRetMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\StoreRetMgt.aspx.designer.cs">
+      <DependentUpon>StoreRetMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\MatIssMgt.aspx.cs">
+      <DependentUpon>MatIssMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\MatIssMgt.aspx.designer.cs">
+      <DependentUpon>MatIssMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\InvMPNMgt.aspx.cs">
+      <DependentUpon>InvMPNMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\InvMPNMgt.aspx.designer.cs">
+      <DependentUpon>InvMPNMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\MatRecMgt.aspx.cs">
+      <DependentUpon>MatRecMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\MatRecMgt.aspx.designer.cs">
+      <DependentUpon>MatRecMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\InvItem_Code.aspx.cs">
+      <DependentUpon>InvItem_Code.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\InvItem_Code.aspx.designer.cs">
+      <DependentUpon>InvItem_Code.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\POMgt.aspx.cs">
+      <DependentUpon>POMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\POMgt.aspx.designer.cs">
+      <DependentUpon>POMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\IGPMgt.aspx.cs">
+      <DependentUpon>IGPMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\IGPMgt.aspx.designer.cs">
+      <DependentUpon>IGPMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\PurchReqMgt.aspx.cs">
+      <DependentUpon>PurchReqMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\PurchReqMgt.aspx.designer.cs">
+      <DependentUpon>PurchReqMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inv\PurchCostMgt.aspx.cs">
+      <DependentUpon>PurchCostMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inv\PurchCostMgt.aspx.designer.cs">
+      <DependentUpon>PurchCostMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="proc\MonthEnd.aspx.cs">
+      <DependentUpon>MonthEnd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="proc\MonthEnd.aspx.designer.cs">
+      <DependentUpon>MonthEnd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="proc\SalCalc.aspx.cs">
+      <DependentUpon>SalCalc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="proc\SalCalc.aspx.designer.cs">
+      <DependentUpon>SalCalc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\EmpMgtSalPayment.aspx.cs">
+      <DependentUpon>EmpMgtSalPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\EmpMgtSalPayment.aspx.designer.cs">
+      <DependentUpon>EmpMgtSalPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\EmpMgtView.aspx.cs">
+      <DependentUpon>EmpMgtView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\EmpMgtView.aspx.designer.cs">
+      <DependentUpon>EmpMgtView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\EmpMgtSalary.aspx.cs">
+      <DependentUpon>EmpMgtSalary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\EmpMgtSalary.aspx.designer.cs">
+      <DependentUpon>EmpMgtSalary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="report\AttendanceReport.aspx.cs">
+      <DependentUpon>AttendanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\AttendanceReport.aspx.designer.cs">
+      <DependentUpon>AttendanceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\DS_Attendance.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Attendance.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="report\EarningRecordReport.aspx.cs">
+      <DependentUpon>EarningRecordReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\EarningRecordReport.aspx.designer.cs">
+      <DependentUpon>EarningRecordReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\EmpPayableReport.aspx.cs">
+      <DependentUpon>EmpPayableReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\EmpPayableReport.aspx.designer.cs">
+      <DependentUpon>EmpPayableReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\MonthlyReconReport.aspx.cs">
+      <DependentUpon>MonthlyReconReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\MonthlyReconReport.aspx.designer.cs">
+      <DependentUpon>MonthlyReconReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\TurnOverReport.aspx.cs">
+      <DependentUpon>TurnOverReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\TurnOverReport.aspx.designer.cs">
+      <DependentUpon>TurnOverReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\DeptWiseGratuityReport.aspx.cs">
+      <DependentUpon>DeptWiseGratuityReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\DeptWiseGratuityReport.aspx.designer.cs">
+      <DependentUpon>DeptWiseGratuityReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\DeptWiseEOBIReport.aspx.cs">
+      <DependentUpon>DeptWiseEOBIReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\DeptWiseEOBIReport.aspx.designer.cs">
+      <DependentUpon>DeptWiseEOBIReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\DeptWiseSalaryReport.aspx.cs">
+      <DependentUpon>DeptWiseSalaryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\DeptWiseSalaryReport.aspx.designer.cs">
+      <DependentUpon>DeptWiseSalaryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\frmBankSalaryTransfer.aspx.cs">
+      <DependentUpon>frmBankSalaryTransfer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\frmBankSalaryTransfer.aspx.designer.cs">
+      <DependentUpon>frmBankSalaryTransfer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\SalaryTransferBankReportNew.aspx.cs">
+      <DependentUpon>SalaryTransferBankReportNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\SalaryTransferBankReportNew.aspx.designer.cs">
+      <DependentUpon>SalaryTransferBankReportNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\LeaveBalanceReport.aspx.cs">
+      <DependentUpon>LeaveBalanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\LeaveBalanceReport.aspx.designer.cs">
+      <DependentUpon>LeaveBalanceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\LeaveReport.aspx.cs">
+      <DependentUpon>LeaveReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\LeaveReport.aspx.designer.cs">
+      <DependentUpon>LeaveReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\SalarySlipReport.aspx.cs">
+      <DependentUpon>SalarySlipReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\SalarySlipReport.aspx.designer.cs">
+      <DependentUpon>SalarySlipReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\SalarySSIReport.aspx.cs">
+      <DependentUpon>SalarySSIReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\SalarySSIReport.aspx.designer.cs">
+      <DependentUpon>SalarySSIReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\SalaryEOBIReport.aspx.cs">
+      <DependentUpon>SalaryEOBIReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\SalaryEOBIReport.aspx.designer.cs">
+      <DependentUpon>SalaryEOBIReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\EmpLoanReport.aspx.cs">
+      <DependentUpon>EmpLoanReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\EmpLoanReport.aspx.designer.cs">
+      <DependentUpon>EmpLoanReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\SalaryReconReport.aspx.cs">
+      <DependentUpon>SalaryReconReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\SalaryReconReport.aspx.designer.cs">
+      <DependentUpon>SalaryReconReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\LoanReport.aspx.cs">
+      <DependentUpon>LoanReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\LoanReport.aspx.designer.cs">
+      <DependentUpon>LoanReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\SalaryTransferBankReport.aspx.cs">
+      <DependentUpon>SalaryTransferBankReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\SalaryTransferBankReport.aspx.designer.cs">
+      <DependentUpon>SalaryTransferBankReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\SalaryTransferReport.aspx.cs">
+      <DependentUpon>SalaryTransferReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\SalaryTransferReport.aspx.designer.cs">
+      <DependentUpon>SalaryTransferReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setup\BranchMgt.aspx.cs">
+      <DependentUpon>BranchMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="setup\BranchMgt.aspx.designer.cs">
+      <DependentUpon>BranchMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setup\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="setup\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setup\CityMgt.aspx.cs">
+      <DependentUpon>CityMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="setup\CityMgt.aspx.designer.cs">
+      <DependentUpon>CityMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\EmpMgtReport.aspx.cs">
+      <DependentUpon>EmpMgtReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\EmpMgtReport.aspx.designer.cs">
+      <DependentUpon>EmpMgtReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="proc\EmpMgtUpload.aspx.cs">
+      <DependentUpon>EmpMgtUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="proc\EmpMgtUpload.aspx.designer.cs">
+      <DependentUpon>EmpMgtUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\EmpMgtResignation.aspx.cs">
+      <DependentUpon>EmpMgtResignation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\EmpMgtResignation.aspx.designer.cs">
+      <DependentUpon>EmpMgtResignation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report\EmpMgtCount.aspx.cs">
+      <DependentUpon>EmpMgtCount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\EmpMgtCount.aspx.designer.cs">
+      <DependentUpon>EmpMgtCount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\MonthSal.aspx.cs">
+      <DependentUpon>MonthSal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\MonthSal.aspx.designer.cs">
+      <DependentUpon>MonthSal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setup\BankMgt.aspx.cs">
+      <DependentUpon>BankMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="setup\BankMgt.aspx.designer.cs">
+      <DependentUpon>BankMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setup\ArtifactsType.aspx.cs">
+      <DependentUpon>ArtifactsType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="setup\ArtifactsType.aspx.designer.cs">
+      <DependentUpon>ArtifactsType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setup\EmpScaleMgt.aspx.cs">
+      <DependentUpon>EmpScaleMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="setup\EmpScaleMgt.aspx.designer.cs">
+      <DependentUpon>EmpScaleMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setup\ItemGroup.aspx.cs">
+      <DependentUpon>ItemGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="setup\ItemGroup.aspx.designer.cs">
+      <DependentUpon>ItemGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setup\TaxRates.aspx.cs">
+      <DependentUpon>TaxRates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="setup\TaxRates.aspx.designer.cs">
+      <DependentUpon>TaxRates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setup\PromotionResponses.aspx.cs">
+      <DependentUpon>PromotionResponses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="setup\PromotionResponses.aspx.designer.cs">
+      <DependentUpon>PromotionResponses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setup\ResponseType.aspx.cs">
+      <DependentUpon>ResponseType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="setup\ResponseType.aspx.designer.cs">
+      <DependentUpon>ResponseType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setup\PromotionArtifacts.aspx.cs">
+      <DependentUpon>PromotionArtifacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="setup\PromotionArtifacts.aspx.designer.cs">
+      <DependentUpon>PromotionArtifacts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setup\SalaryContent.aspx.cs">
+      <DependentUpon>SalaryContent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="setup\SalaryContent.aspx.designer.cs">
+      <DependentUpon>SalaryContent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setup\UOM.aspx.cs">
+      <DependentUpon>UOM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="setup\UOM.aspx.designer.cs">
+      <DependentUpon>UOM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setup\SectionMgt.aspx.cs">
+      <DependentUpon>SectionMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="setup\SectionMgt.aspx.designer.cs">
+      <DependentUpon>SectionMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setup\LocationMgt.aspx.cs">
+      <DependentUpon>LocationMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="setup\LocationMgt.aspx.designer.cs">
+      <DependentUpon>LocationMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setup\DesignationMgt.aspx.cs">
+      <DependentUpon>DesignationMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="setup\DesignationMgt.aspx.designer.cs">
+      <DependentUpon>DesignationMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setup\DepartmentMgt.aspx.cs">
+      <DependentUpon>DepartmentMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="setup\DepartmentMgt.aspx.designer.cs">
+      <DependentUpon>DepartmentMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setup\DivisionMgt.aspx.cs">
+      <DependentUpon>DivisionMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="setup\DivisionMgt.aspx.designer.cs">
+      <DependentUpon>DivisionMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setup\RegionMgt.aspx.cs">
+      <DependentUpon>RegionMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="setup\RegionMgt.aspx.designer.cs">
+      <DependentUpon>RegionMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\EmpMgtLeave.aspx.cs">
+      <DependentUpon>EmpMgtLeave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\EmpMgtLeave.aspx.designer.cs">
+      <DependentUpon>EmpMgtLeave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\EmpMgtLoan.aspx.cs">
+      <DependentUpon>EmpMgtLoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\EmpMgtLoan.aspx.designer.cs">
+      <DependentUpon>EmpMgtLoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\EmpMgtMedical.aspx.cs">
+      <DependentUpon>EmpMgtMedical.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\EmpMgtMedical.aspx.designer.cs">
+      <DependentUpon>EmpMgtMedical.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\EmpMgtSalary_x.aspx.cs">
+      <DependentUpon>EmpMgtSalary_x.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\EmpMgtSalary_x.aspx.designer.cs">
+      <DependentUpon>EmpMgtSalary_x.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\EmpMgt.aspx.cs">
+      <DependentUpon>EmpMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\EmpMgt.aspx.designer.cs">
+      <DependentUpon>EmpMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setup\Groups.aspx.cs">
+      <DependentUpon>Groups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="setup\Groups.aspx.designer.cs">
+      <DependentUpon>Groups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setup\PrivilageMgt.aspx.cs">
+      <DependentUpon>PrivilageMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="setup\PrivilageMgt.aspx.designer.cs">
+      <DependentUpon>PrivilageMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setup\User.aspx.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="setup\User.aspx.designer.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="UserControl\Buttons.ascx.cs">
+      <DependentUpon>Buttons.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Buttons.ascx.designer.cs">
+      <DependentUpon>Buttons.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Messages.ascx.cs">
+      <DependentUpon>Messages.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Messages.ascx.designer.cs">
+      <DependentUpon>Messages.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\EmpSearchUC.ascx.cs">
+      <DependentUpon>EmpSearchUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\EmpSearchUC.ascx.designer.cs">
+      <DependentUpon>EmpSearchUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ReportViewer.ascx.cs">
+      <DependentUpon>ReportViewer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ReportViewer.ascx.designer.cs">
+      <DependentUpon>ReportViewer.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RMS.BL\RMS.BL.csproj">
+      <Project>{73E1E6EC-FCFE-4707-AD66-4B64C84D07ED}</Project>
+      <Name>RMS.dbml</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MainResource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MainResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dll\AjaxControlToolkit.dll" />
+    <Content Include="js\common.js" />
+    <Content Include="home\RMSMasterHome.Master" />
+    <Content Include="home\Home.aspx" />
+    <Content Include="NotAutherized.htm" />
+    <Content Include="setup\ChangePassword.aspx" />
+    <Content Include="setup\Groups.aspx" />
+    <Content Include="setup\PrivilageMgt.aspx" />
+    <Content Include="setup\User.aspx" />
+    <Content Include="UserControl\Buttons.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MiscMsgs.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MiscMsgs.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="cs\style.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\AC_RunActiveContent.js" />
+    <Content Include="js\effects.js" />
+    <Content Include="js\prototype.js" />
+    <Content Include="js\scriptaculous.js" />
+    <Content Include="setup\CityMgt.aspx" />
+    <Content Include="UserControl\EmpSearchUC.ascx" />
+    <Content Include="UserControl\ReportViewer.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cs\login_style.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cs\Menu.css" />
+    <Content Include="dll\System.Web.DataVisualization.dll" />
+    <Content Include="home\Error.aspx" />
+    <Content Include="js\menu.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\PageTitlesResource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>PageTitlesResource.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bgTextField.png" />
+    <Content Include="images\btn_admin.jpg" />
+    <Content Include="images\btn_bg.jpg" />
+    <Content Include="images\btn_emp.jpg" />
+    <Content Include="images\btn_proc.jpg" />
+    <Content Include="images\btn_rpt.jpg" />
+    <Content Include="images\btn_setup.jpg" />
+    <Content Include="images\btn_upload.png" />
+    <Content Include="images\crtAccount.png" />
+    <Content Include="images\innerCenter.jpg" />
+    <Content Include="images\innerFooter.png" />
+    <Content Include="images\logo.png">
+    </Content>
+    <Content Include="images\rightArrow.jpg" />
+    <Content Include="images\rightArrowAdd.jpg" />
+    <Content Include="images\rightArrowChange.jpg" />
+    <Content Include="images\textField.jpg" />
+    <Content Include="images\topHeader.png" />
+    <Content Include="index1.html" />
+    <Content Include="proc\SalCalc.aspx" />
+    <Content Include="profile\EmpMgtView.aspx" />
+    <Content Include="profile\EmpMgtSalary.aspx" />
+    <Content Include="report\SalarySSIReport.aspx" />
+    <Content Include="report\SalaryEOBIReport.aspx" />
+    <Content Include="report\EmpLoanReport.aspx" />
+    <Content Include="report\SalaryReconReport.aspx" />
+    <Content Include="report\LoanReport.aspx" />
+    <Content Include="report\EmpMgtReport.aspx" />
+    <Content Include="proc\EmpMgtUpload.aspx" />
+    <Content Include="profile\EmpMgtResignation.aspx" />
+    <Content Include="report\EmpMgtCount.aspx" />
+    <Content Include="profile\MonthSal.aspx" />
+    <Content Include="report\SalaryTransferBankReport.aspx" />
+    <Content Include="report\SalaryTransferReport.aspx" />
+    <Content Include="setup\SectionMgt.aspx" />
+    <Content Include="setup\LocationMgt.aspx" />
+    <Content Include="setup\DesignationMgt.aspx" />
+    <Content Include="setup\DepartmentMgt.aspx" />
+    <Content Include="setup\DivisionMgt.aspx" />
+    <Content Include="setup\RegionMgt.aspx" />
+    <Content Include="profile\EmpMgtLeave.aspx" />
+    <Content Include="profile\EmpMgtLoan.aspx" />
+    <Content Include="profile\EmpMgtMedical.aspx" />
+    <Content Include="profile\EmpMgtSalary_x.aspx" />
+    <Content Include="profile\EmpMgt.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="report\rdlc\rptSalarySSI.rdlc" />
+    <Content Include="report\rdlc\rptSalaryEOBI.rdlc" />
+    <Content Include="report\rdlc\rptLoanReport.rdlc" />
+    <Content Include="report\rdlc\rptSalaryRecon.rdlc" />
+    <Content Include="report\rdlc\rptSalaryTransferBank.rdlc" />
+    <Content Include="report\rdlc\rptSalaryTransfer.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="report\rdlc\rptSalarySheet.rdlc" />
+    <Content Include="report\SalarySlipReport.aspx" />
+    <Content Include="setup\BankMgt.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HomeSelection.aspx" />
+    <Content Include="home\AdminHome.aspx" />
+    <Content Include="home\InvHome.aspx" />
+    <Content Include="home\GLHome.aspx" />
+    <Content Include="images\admin.png" />
+    <Content Include="images\btn_setup_daily.jpg" />
+    <Content Include="images\btn_voucher.jpg" />
+    <Content Include="images\GL.png" />
+    <Content Include="images\loginTopimg.jpg" />
+    <Content Include="images\payroll.png" />
+    <Content Include="images\sales.png" />
+    <Content Include="InvReports\BrokerWiseRawHidePurchBookReport.aspx" />
+    <Content Include="InvReports\WetBlueStockReport.aspx" />
+    <Content Include="InvReports\WetBlueProcPosReport.aspx" />
+    <Content Include="InvReports\RawHideStockReport.aspx" />
+    <Content Include="InvSetup\MaterialPurchaseNoteMgt.aspx" />
+    <Content Include="InvSetup\MaterialPurchaseNoteHome.aspx" />
+    <Content Include="InvSetup\GradingCardMgt.aspx" />
+    <Content Include="InvSetup\GradingCardHome.aspx" />
+    <Content Include="InvSetup\MaterialTrnsfrNtMgt.aspx" />
+    <Content Include="InvSetup\MaterialTrnsfrNtHome.aspx" />
+    <Content Include="InvSetup\InwardGatePassHome.aspx" />
+    <Content Include="InvSetup\SizingGradingCardMgt.aspx" />
+    <Content Include="InvSetup\SizingGradingHome.aspx" />
+    <Content Include="InvSetup\InwardGatePassMgt.aspx" />
+    <Content Include="js\empsaltotal.js" />
+    <Content Include="js\jquery.easy-confirm-dialog.js" />
+    <Content Include="proc\MonthEnd.aspx" />
+    <Content Include="report\rdlc\rptSalaryRecon2.rdlc" />
+    <Content Include="report\rdlc\rptSalarySlip.rdlc" />
+    <Content Include="Scripts\jquery-1.4.2.min.js" />
+    <Content Include="Scripts\jquery-1.6.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.16.custom.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.16.js" />
+    <Content Include="Scripts\jquery-ui-1.8.16.min.js" />
+    <Content Include="Scripts\jquery-ui.css" />
+    <Content Include="Scripts\jquery.autocomplete.css" />
+    <Content Include="Scripts\jquery.autocomplete.js" />
+    <Content Include="Scripts\jquery.ui.all.css" />
+    <Content Include="Scripts\jquery.ui.theme.css" />
+    <Content Include="Scripts\json2.js" />
+    <Content Include="Scripts\login_style.css" />
+    <Content Include="Scripts\modernizr-1.7.js" />
+    <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Scripts\Site.css" />
+    <Content Include="setup\BranchMgt.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvReports\rdlc\RawHidePurchBookRpt.rdlc" />
+    <Content Include="InvReports\rdlc\WetBlueProcesPosRpt.rdlc" />
+    <Content Include="InvReports\rdlc\WetBlueStockRpt.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvReports\rdlc\RawHidePurchBookYearRpt.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GLSetup\frmGl_Code.aspx" />
+    <Content Include="InvReports\rdlc\RawHidePurchBookYrVendor.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvReports\rdlc\RawHidePurchBookVendorWholeYear.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="empix\noimage.jpg" />
+    <Content Include="GLSetup\frmGLCOA.aspx" />
+    <Content Include="GLSetup\frmGl_Type.aspx" />
+    <Content Include="GLSetup\frmLedgerCard.aspx" />
+    <Content Include="GLSetup\frmPreferences.aspx" />
+    <Content Include="GLSetup\frmReportParameter.aspx" />
+    <Content Include="GLSetup\frmViewVoucher.aspx" />
+    <Content Include="GLSetup\frmVoucherDetail.aspx" />
+    <Content Include="GLSetup\frmVoucherHome.aspx" />
+    <Content Include="GLSetup\frmVoucherSummary.aspx" />
+    <Content Include="images\login_bg.jpg" />
+    <Content Include="images\icon.ico" />
+    <Content Include="InvReports\rdlc\RawHideStockByStatusRpt.rdlc" />
+    <Content Include="InvSetupSupport\AutoCompleteSearch.asmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GLSetup\frmLedgerCardCond.aspx" />
+    <Content Include="GLSetup\frmThicknessSetup.aspx" />
+    <Content Include="GLSetup\frmColorSetup.aspx" />
+    <Content Include="GLSetup\frmDesignSetup.aspx" />
+    <Content Include="GLSetup\rdlc\rptBPnBR.rdlc" />
+    <Content Include="GLSetup\rdlc\rptCOA.rdlc" />
+    <Content Include="GLSetup\rdlc\rptJV.rdlc" />
+    <Content Include="GLSetup\rdlc\rptLedger.rdlc" />
+    <Content Include="GLSetup\rdlc\rptTB.rdlc" />
+    <Content Include="GLSetup\rdlc\rptVoucherSummary.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bg1.jpg" />
+    <Content Include="images\btnDone.png" />
+    <Content Include="images\btnMerge.png" />
+    <Content Include="images\btn_add.png" />
+    <Content Include="images\btn_add_m.png" />
+    <Content Include="images\btn_adminhr.jpg" />
+    <Content Include="images\btn_back.png" />
+    <Content Include="images\btn_back_m.png" />
+    <Content Include="images\btn_browse.png" />
+    <Content Include="images\btn_browse_m.png" />
+    <Content Include="images\btn_cancel.png" />
+    <Content Include="images\btn_cancel_m.png" />
+    <Content Include="images\btn_clear.png" />
+    <Content Include="images\btn_clear_m.png" />
+    <Content Include="images\btn_delete.png" />
+    <Content Include="images\btn_delete_m.png" />
+    <Content Include="images\btn_edit.png" />
+    <Content Include="images\btn_edit_m.png" />
+    <Content Include="images\btn_export.png" />
+    <Content Include="images\btn_export_m.png" />
+    <Content Include="images\btn_Forward.png" />
+    <Content Include="images\btn_Forward_m.png" />
+    <Content Include="images\btn_generate.png" />
+    <Content Include="images\btn_generate_m.png" />
+    <Content Include="images\btn_list.png" />
+    <Content Include="images\btn_list_m.png" />
+    <Content Include="images\btn_login.png" />
+    <Content Include="images\btn_login_m.png" />
+    <Content Include="images\btn_move.png" />
+    <Content Include="images\btn_move_m.png" />
+    <Content Include="images\btn_next.png" />
+    <Content Include="images\btn_next_m.png" />
+    <Content Include="images\btn_previous.png" />
+    <Content Include="images\btn_previous_m.png" />
+    <Content Include="images\btn_reportshr.jpg" />
+    <Content Include="images\btn_save.png" />
+    <Content Include="images\btn_save_m.png" />
+    <Content Include="images\btn_search.png" />
+    <Content Include="images\btn_search_m.png" />
+    <Content Include="images\btn_show.png" />
+    <Content Include="images\btn_show_m.png" />
+    <Content Include="images\btn_transactionshr.jpg" />
+    <Content Include="images\btn_upload_m.png" />
+    <Content Include="images\btn_voucherhr.jpg" />
+    <Content Include="images\close.png" />
+    <Content Include="images\btn_approve.png" />
+    <Content Include="images\btn_approve_m.png" />
+    <Content Include="images\loginfooterimg.jpg" />
+    <Content Include="images\logo2.png" />
+    <Content Include="images\payable.png" />
+    <Content Include="images\search_icon.png" />
+    <Content Include="images\stock.png" />
+    <Content Include="InvReports\IGPPrintReport.aspx" />
+    <Content Include="InvReports\PartyWiseRawHidePurchBookReport.aspx" />
+    <Content Include="InvReports\PayablesReport.aspx" />
+    <Content Include="InvReports\WetBlueStkLedgherReport.aspx" />
+    <Content Include="InvSetup\WetBlueTrnsfrView.aspx" />
+    <Content Include="InvSetup\MaterialPurchaseNoteHomeNew.aspx" />
+    <Content Include="InvSetup\MaterialPurchaseNoteMgtNew.aspx" />
+    <Content Include="InvSetup\MaterialPurchaseNoteView.aspx" />
+    <Content Include="InvSetup\SizingGradingCardMgt1.aspx" />
+    <Content Include="InvSetup\SizingGradingHome1.aspx" />
+    <Content Include="InvSetup\GradingCardView.aspx" />
+    <Content Include="InvSetup\MaterialTrnsfrNtView.aspx" />
+    <Content Include="InvSetup\InwardGatePassView.aspx" />
+    <Content Include="InvSetup\CrustDeptTrnsfrHome.aspx" />
+    <Content Include="InvSetup\CrustDeptTrnsfrMgt.aspx" />
+    <Content Include="InvSetup\WetBlueTrnsfrMgt.aspx" />
+    <Content Include="InvSetup\WetBlueTrnsfrHome.aspx" />
+    <Content Include="InvReports\rdlc\WetBlueStkLedger.rdlc" />
+    <Content Include="InvReports\rdlc\RawHidePartyPayablesRpt.rdlc" />
+    <Content Include="InvReports\rdlc\IGPPrintRpt.rdlc" />
+    <Content Include="InvReports\rdlc\WetBlueProcessByStatusRpt.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GLSetup\rdlc\rptOpenTB.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvReports\rdlc\RawHidePurchBookVendorMonth.rdlc" />
+    <Content Include="InvSetup\SizingGradingCardView.aspx" />
+    <Content Include="InvSetup\SizingGradingHome2.aspx" />
+    <Content Include="InvSetup\SizingGradingCardMgt2.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvReports\rdlc\RawHidePurchBookMonthYearRpt.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GLSetup\frmBudgetEntry.aspx" />
+    <Content Include="GLSetup\NewfrmGlBudgetSetup.aspx" />
+    <Content Include="home\InvenHome.aspx" />
+    <Content Include="InvenRpt\InvenStockLedgerReport.aspx" />
+    <Content Include="InvReports\rdlc\RawHidePurchBookMonthRpt.rdlc" />
+    <Content Include="InvSetup\MaterialPurchaseNoteViewNew.aspx" />
+    <Content Include="Inv\MatIssMgt.aspx" />
+    <Content Include="Inv\InvMPNMgt.aspx" />
+    <Content Include="Inv\MatRecMgt.aspx" />
+    <Content Include="Inv\InvItem_Code.aspx" />
+    <Content Include="Inv\POMgt.aspx" />
+    <Content Include="Inv\IGPMgt.aspx" />
+    <Content Include="Inv\PurchReqMgt.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\rdlc\StockMovementLedger.rdlc" />
+    <Content Include="InvenRpt\InvenStockStatusReport.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\rdlc\StockStatus.rdlc" />
+    <Content Include="InvenRpt\InvenDeptWiseConsumptionReport.aspx" />
+    <Content Include="Inv\StoreRetMgt.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GLSetup\frmBgtVarianceRpt.aspx" />
+    <Content Include="InvenRpt\rdlc\DeptWiseConsumption.rdlc" />
+    <Content Include="InvSetupSupport\ViewIgp.aspx" />
+    <Content Include="Inv\PurchCostMgt.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GLSetup\rdlc\rptBudgetVariance.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GLSetup\frmBgtListRpt.aspx" />
+    <Content Include="GLSetup\rdlc\rptBudgetList.rdlc" />
+    <Content Include="InvenRpt\ItemWiseStkPurchBookReport.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\PartyWiseStkPurchBookReport.aspx" />
+    <Content Include="InvenRpt\rdlc\StockPurchaseReport.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\ItemWiseStockMovementReport.aspx" />
+    <Content Include="InvenRpt\rdlc\PartyWiseStockPurchaseReport.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\ComparativeStockStatusReport.aspx" />
+    <Content Include="InvenRpt\rdlc\ItemWiseStockMovement.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\rdlc\ComparativeStockStatusRpt.rdlc" />
+    <Content Include="InvSetup\CrustDeptTrnsfrView.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\rdlc\InventoryPurchaseRpt.rdlc" />
+    <Content Include="InvenRpt\rdlc\InvertoryPurchaseSubReport.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\rdlc\DeptWiseConsumptionDet.rdlc" />
+    <Content Include="Inv\Departments.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvReports\rdlc\CrustStkLedger.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\MonthlyDemandReport.aspx" />
+    <Content Include="InvReports\rdlc\FinishGoodsStkLedger.rdlc" />
+    <Content Include="InvSetup\DispatchrHome.aspx" />
+    <Content Include="InvSetup\DispatchMgt.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\rdlc\DeptWiseMonthlyDemand.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\rdlc\ItemWiseMonthlyDemand.rdlc" />
+    <Content Include="InvReports\RawHideLotReport.aspx" />
+    <Content Include="InvSetup\DispatchView.aspx" />
+    <Content Include="InvSetup\ChangeLot.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvReports\rdlc\RawHideLotRpt.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\rdlc\PO.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\ItemsChartReport.aspx" />
+    <Content Include="InvenRpt\rdlc\PODet_Sub.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GLSetup\frmReportParameterView.aspx" />
+    <Content Include="GLSetup\frmReportParameterHome.aspx" />
+    <Content Include="InvenRpt\rdlc\ItemMasterListRpt.rdlc">
+    </Content>
+    <Content Include="Inv\ItemCode.aspx" />
+    <Content Include="report\LeaveReport.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="report\rdlc\rptLeaveReport.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\1YwB1sO8YE1Lyjf12WNiUA.woff2" />
+    <Content Include="fonts\H2DMvhDLycM56KNuAtbJYA.woff2" />
+    <Content Include="fonts\ObQr5XYcoH0WBoUxiaYK3_Y6323mHUZFJMgTvxaG2iE.woff2" />
+    <Content Include="fonts\PLygLKRVCQnA5fhu3qk5fQ.woff2" />
+    <Content Include="fonts\UyBMtLsHKBKXelqf4x7VRQ.woff2" />
+    <Content Include="fonts\YMOYVM-eg6Qs9YzV9OSqZfesZW2xOQ-xsNqO47m55DA.woff2" />
+    <Content Include="App_Data\Database\3W_DB_Backup_local_20160903.rar" />
+    <Content Include="assets\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="assets\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="assets\fonts\ionicons.eot" />
+    <Content Include="assets\fonts\ionicons.ttf" />
+    <Content Include="assets\fonts\ionicons.woff" />
+    <Content Include="assets\fonts\revicons\revicons.eot" />
+    <Content Include="assets\fonts\revicons\revicons.ttf" />
+    <Content Include="assets\fonts\revicons\revicons.woff" />
+    <Content Include="assets\fonts\Simple-Line-Icons.eot" />
+    <Content Include="assets\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="assets\fonts\Simple-Line-Icons.woff" />
+    <Content Include="assets\fonts\Simple-Line-Icons.woff2" />
+    <Content Include="assets\fonts\weathericons-regular-webfont.eot" />
+    <Content Include="assets\fonts\weathericons-regular-webfont.ttf" />
+    <Content Include="assets\fonts\weathericons-regular-webfont.woff" />
+    <Content Include="assets\fonts\weathericons-regular-webfontd41d.eot" />
+    <Content Include="assets\js\tagsinput\cities.json" />
+    <Content Include="assets\js\tagsinput\citynames.json" />
+    <Content Include="App_Data\Database\DB_129583_pac_20201031.rar" />
+    <Content Include="App_Data\Database\DB_129583_3621_20210306.zip" />
+    <None Include="GLSetup\GlRptDataSet.xsc">
+      <DependentUpon>GlRptDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="GLSetup\GlRptDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GlRptDataSet.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="GLSetup\GlRptDataSet.xss">
+      <DependentUpon>GlRptDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="home\RMSMasterHomeOriginal.Master" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\Computer1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <None Include="Properties\PublishProfiles\Profile2.pubxml" />
+    <None Include="report\DS_Attendance.xsc">
+      <DependentUpon>DS_Attendance.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="report\DS_Attendance.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Attendance.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="report\DS_Attendance.xss">
+      <DependentUpon>DS_Attendance.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="report\rdlc\rptBudget.rdlc" />
+    <Content Include="report\rdlc\rptEmpSalSheet.rdlc" />
+    <Content Include="report\rdlc\rptEmpSalSlip.rdlc" />
+    <Content Include="report\rdlc\rptEmpSalSummary.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GLSetup\rdlc\rptGlReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="report\LeaveBalanceReport.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="report\SalaryTransferBankReportNew.aspx" />
+    <Content Include="report\rdlc\rptLeaveBalReport.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GLSetup\frmFinancialReportRpt_New.aspx" />
+    <Content Include="GLSetup\frmGlLvlCodeAutoGenCode.aspx" />
+    <Content Include="GLSetup\frmGlLvlCode.aspx" />
+    <Content Include="images\btn_print.PNG" />
+    <Content Include="images\btn_print_m.PNG" />
+    <Content Include="images\incomingmsg.jpg" />
+    <Content Include="report\frmBankSalaryTransfer.aspx" />
+    <Content Include="report\rdlc\rptSalaryTransferBankNew.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\rdlc\PurchReq.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="report\DeptWiseSalaryReport.aspx" />
+    <Content Include="report\rdlc\rptEmpProfile.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="report\DeptWiseEOBIReport.aspx" />
+    <Content Include="report\rdlc\rptDeptWiseSalary.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="report\DeptWiseGratuityReport.aspx" />
+    <Content Include="report\rdlc\rptDeptWiseEOBI.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="report\AttendanceReport.aspx" />
+    <Content Include="report\TurnOverReport.aspx" />
+    <Content Include="report\rdlc\rptDeptWiseGratuityStatement.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="report\MonthlyReconReport.aspx" />
+    <Content Include="report\rdlc\rptTurnOver.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\btn_rpt_att.jpg" />
+    <Content Include="images\btn_rpt_misc.jpg" />
+    <Content Include="images\btn_rpt_sal.jpg" />
+    <Content Include="report\EarningRecordReport.aspx" />
+    <Content Include="report\rdlc\MontylyReconciliation.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="report\rdlc\EarnngRec.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="report\rdlc\rptAttendance.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GLSetup\frmCCAccount.aspx" />
+    <Content Include="GLSetup\frmSearchVoucher.aspx" />
+    <Content Include="GLSetup\rdlc\rptLedgerView.rdlc" />
+    <Content Include="GLSetup\ViewLedgerCard.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GLSetup\frmGLVoucher.aspx" />
+    <Content Include="GLSetup\rdlc\rptCCLedger.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="profile\EmpMgtSalPayment.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="report\EmpPayableReport.aspx" />
+    <Content Include="report\rdlc\rptSalaryPayment.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\btn_attach.PNG" />
+    <Content Include="images\btn_attach_m.PNG" />
+    <Content Include="Inv\StoreLocation.aspx" />
+    <Content Include="report\rdlc\rptPayable.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GLSetup\frmGLCashBook.aspx" />
+    <Content Include="InvenRpt\rdlc\DeptWiseCCConsumptiont.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GLSetup\frmGLAccInfo.aspx" />
+    <Content Include="GLSetup\rdlc\rptGlCashBook.rdlc" />
+    <Content Include="Scripts\jquery-1.10.1.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GLSetup\frmLedgerCardSummary.aspx" />
+    <Content Include="GLSetup\rdlc\rptGLAccInfo.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GLSetup\frmGLYear.aspx" />
+    <Content Include="GLSetup\frmGLVoucherUnpost.aspx" />
+    <Content Include="GLSetup\rdlc\rptTBSummary.rdlc" />
+    <Content Include="home\SalesHome.aspx" />
+    <Content Include="images\btn_trans.jpg" />
+    <Content Include="images\btn_unpost.png" />
+    <Content Include="images\btn_unpost_m.png" />
+    <Content Include="Inv\STNMgt.aspx" />
+    <Content Include="sales\DCNMgt.aspx" />
+    <Content Include="sales\ItemCode.aspx" />
+    <Content Include="sales\PTNMgt_Org.aspx" />
+    <Content Include="setup\UOM.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sales\rdlc\PrintNote.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sales\ItemRate.aspx" />
+    <Content Include="sales\SRNMgt.aspx" />
+    <Content Include="sales\PTNMgt.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sales\rdlc\PrintInvoice.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sales\SOMgt.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sales\RptShipmentSchedule.aspx" />
+    <Content Include="sales\rdlc\PrintSalesOrder.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sales\rdlc\ShipScheduleByItem.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sales\RptRateAnalysis.aspx" />
+    <Content Include="sales\rdlc\ShipScheduleByParty.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\CriticaltemsList.aspx" />
+    <Content Include="InvenRpt\SlowMovingItemsList.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GLSetup\frmChqClearanceRpt.aspx" />
+    <Content Include="GLSetup\frmChqClearance.aspx" />
+    <Content Include="InvenRpt\rdlc\SlowMovingItems.rdlc" />
+    <Content Include="Inv\ItemCode1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GLSetup\rdlc\ChqClearance.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\PurchOrderStatus.aspx" />
+    <Content Include="InvenRpt\rdlc\CriticalItemsList.rdlc" />
+    <Content Include="Inv\STNRecMgt.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\LastPriceReport.aspx" />
+    <Content Include="InvenRpt\rdlc\PurchOrderStatus.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\rdlc\LastPriceReport.rdlc" />
+    <Content Include="sales\AreaCode.aspx" />
+    <Content Include="sales\SaleReq.aspx" />
+    <Content Include="setup\ResponseType.aspx" />
+    <Content Include="setup\PromotionArtifacts.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sales\SOMgt_Org.aspx" />
+    <Content Include="sales\rdlc\SaleReq.rdlc" />
+    <Content Include="setup\PromotionResponses.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\rdlc\GP.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\rdlc\MatRec.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\rdlc\MatIss.rdlc" />
+    <Content Include="Inv\AdjNote.aspx" />
+    <Content Include="sales\SalesPromotionResponse.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GLSetup\frmCC.aspx" />
+    <Content Include="InvenRpt\rdlc\PODet_Sub_Wo_GST.rdlc" />
+    <Content Include="Inv\POClosureMgt.aspx" />
+    <Content Include="Inv\PORevMgt.aspx" />
+    <Content Include="sales\RptRetailerVisitPlan.aspx" />
+    <Content Include="sales\RetailerVisitPlan.aspx" />
+    <Content Include="setup\ArtifactsType.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GLSetup\Vouchers.aspx" />
+    <Content Include="sales\rdlc\VisitPlan.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="report\rdlc\rptSalaryRecon2_Prev.rdlc" />
+    <Content Include="setup\ItemGroup.aspx" />
+    <Content Include="setup\TaxRates.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Code\" />
+    <Folder Include="Attachments\" />
+    <Folder Include="ExpAttachments\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\rdlc\PartyWiseUnpaidInvoiceRpt.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\rdlc\PartyWiseUnallocatedFundsRpt.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InvenRpt\rdlc\SalesTaxItem.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GLSetup\rdlc\rptCCLedgerSummary.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GLSetup\rdlc\rptCCLedgerDetail.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sales\rdlc\ConsSalesRpt.rdlc" />
+    <Content Include="sales\rdlc\AgeingOfRecRpt.rdlc" />
+    <Content Include="InvenRpt\rdlc\PartyWiseSalesTax.rdlc" />
+    <Content Include="sales\rdlc\StatementOfAcRpt.rdlc" />
+    <Content Include="GLSetup\rdlc\rptChequeSB.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GLSetup\rdlc\rptChequeABL.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GLSetup\rdlc\rptChequeHMB.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GLSetup\rdlc\rptChequeBOP.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GLSetup\rdlc\rptChequeAB.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GLSetup\rdlc\rptChequeNIB.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GLSetup\rdlc\rptChequeMCB.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GLSetup\rdlc\voucher.rdlc" />
+    <Content Include="GLSetup\rdlc\rptBPnBR1.rdlc" />
+    <Content Include="GLSetup\rdlc\rptJV1.rdlc" />
+    <Content Include="report\rdlc\rptEmpProfile - Copy.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GLSetup\rdlc\rptReleaseGrant.rdlc" />
+    <Content Include="GLSetup\rdlc\rptHeadsDivisionalDetail.rdlc" />
+    <Content Include="GLSetup\rdlc\rptAnnualGrant.rdlc" />
+    <Content Include="GLSetup\rdlc\rptSNEDemand.rdlc" />
+    <Content Include="report\rdlc\AttenReport.rdlc" />
+    <Content Include="report\rdlc\rptAppBudget.rdlc" />
+    <Content Include="report\rdlc\Edu.rdlc" />
+    <Content Include="report\rdlc\rpttEmpContact.rdlc" />
+    <Content Include="report\rdlc\rpttEmpLitigationReport.rdlc" />
+    <Content Include="report\rdlc\rpttEmpEnquiryReport.rdlc" />
+    <Content Include="report\rdlc\rpttEmpPermotion.rdlc" />
+    <Content Include="report\rdlc\rpttEmpPriorExp.rdlc" />
+    <Content Include="report\rdlc\rpttEmpTenureExpe.rdlc" />
+    <Content Include="report\rdlc\rpttEmpEducation.rdlc" />
+    <Content Include="GLSetup\rdlc\rptBPnBR1Division.rdlc" />
+    <Content Include="GLSetup\rdlc\rptBPnBR1District.rdlc" />
+    <Content Include="GLSetup\rdlc\rptDistGrantAmoungCouncil.rdlc" />
+    <Content Include="GLSetup\rdlc\rptExpAllocation.rdlc" />
+    <Content Include="GLSetup\rdlc\rptAppExp.rdlc" />
+    <Content Include="GLSetup\rdlc\rptDistGrantAmoungCouncilHalf.rdlc" />
+    <Content Include="GLSetup\rdlc\rptDistGrantAmoungCouncilQuarterly.rdlc" />
+    <Content Include="GLSetup\rdlc\rptSneDemandReport.rdlc" />
+    <Content Include="GLSetup\rdlc\rptSNEvsAllo.rdlc" />
+    <Content Include="GLSetup\rdlc\rptGetExpStatement.rdlc" />
+    <Content Include="GLSetup\rdlc\rptLedgerCopy.rdlc" />
+    <Content Include="GLSetup\rdlc\rptGetExpStatementMonth.rdlc" />
+    <Content Include="GLSetup\rdlc\rptBankWiseExp.rdlc" />
+    <Content Include="GLSetup\rdlc\rptbm10.rdlc" />
+    <Content Include="GLSetup\rdlc\rptExcess2.rdlc" />
+    <Content Include="GLSetup\rdlc\rptExcess.rdlc" />
+    <Content Include="GLSetup\rdlc\PostAuditReport.rdlc" />
+    <EmbeddedResource Include="GLSetup\rdlc\rptTheatreData.rdlc" />
+    <EmbeddedResource Include="GLSetup\rdlc\TestReport.rdlc" />
+    <EmbeddedResource Include="Report1.rdlc" />
+    <Content Include="report\rdlc\rdlcEmpProfilecomp.rdlc" />
+    <Content Include="report\rdlc\ConsolidatedReport.rdlc" />
+    <Content Include="report\rdlc\EmpRelievingExcel.rdlc" />
+    <EmbeddedResource Include="report\rdlc\PracticeMat.rdlc" />
+    <EmbeddedResource Include="report\rdlc\rdlcEmpProfileDataRecord.rdlc" />
+    <EmbeddedResource Include="report\rdlc\rdlcEmpProfilecomplete-Backup.rdlc" />
+    <EmbeddedResource Include="report\rdlc\rdlcEmpProfilecomplete.rdlc" />
+    <Content Include="report\rdlc\rptEmpBankTransfer.rdlc" />
+    <Content Include="report\rdlc\rptEmpSalSheetforSkp.rdlc" />
+    <Content Include="report\rdlc\rptEmpSalSlipForSkp.rdlc" />
+    <Content Include="report\rdlc\rptEmpSalSummaryForSkp.rdlc" />
+    <Content Include="report\rdlc\rptCpfAndAdvance.rdlc" />
+    <Content Include="report\rdlc\rptTaxdedFromSalaryCopy.rdlc" />
+    <Content Include="report\rdlc\rptTaxdedFromSalary.rdlc" />
+    <Content Include="report\rdlc\rptEmpSlipDivision.rdlc" />
+    <Content Include="report\rdlc\rptEmpSlFordistrict.rdlc" />
+    <Content Include="report\rdlc\rptEmpSalSheetForDivision.rdlc" />
+    <Content Include="report\rdlc\rptEmpSalSDistrict.rdlc" />
+    <Content Include="report\rdlc\rptEmpSalSummaryDistric.rdlc" />
+    <Content Include="report\rdlc\rptEmpSalSummaryDivision.rdlc" />
+    <Content Include="report\rdlc\rptEmpBankTransferBahawal.rdlc" />
+    <Content Include="report\rdlc\rptEmpBasicProfile.rdlc" />
+    <Content Include="report\rdlc\rptEmpBankTransferskp.rdlc" />
+    <Content Include="report\rdlc\rptEmpBankTransferSargodh.rdlc" />
+    <Content Include="report\rdlc\rptEmpBankTransferFaisal.rdlc" />
+    <Content Include="report\rdlc\rptEmpBankTransferSahiwal.rdlc" />
+    <Content Include="report\rdlc\rptEmpSalSummaryForCul.rdlc" />
+    <Content Include="report\rdlc\rptEmpBankTransferMultan.rdlc" />
+    <Content Include="report\rdlc\rptEmpBankTransferRawal.rdlc" />
+    <Content Include="report\rdlc\rptEmpBankTransferMurac.rdlc" />
+    <Content Include="report\rdlc\rptBmForm11.rdlc" />
+    <Content Include="report\rdlc\rptEmpBankTransferPACC.rdlc" />
+    <Content Include="report\rdlc\rptListSalSlipPucar.rdlc" />
+    <Content Include="report\rdlc\rpttAllEmpContactExcel.rdlc" />
+    <EmbeddedResource Include="report\rdlc\rptTaxpay.rdlc" />
+    <Content Include="report\rdlc\rpttEmpAcrRecord.rdlc" />
+    <Content Include="report\rdlc\SalarySheetForLAC.rdlc" />
+    <Content Include="report\rdlc\SalaryTransferExcel.rdlc" />
+    <Content Include="report\rdlc\EmpContactExcel.rdlc" />
+    <Content Include="report\rdlc\rpttEmpRelieving.rdlc" />
+    <Content Include="report\rdlc\rpttAllEmpContact.rdlc" />
+    <Content Include="report\rdlc\rpttEmpRelievingExcell.rdlc" />
+    <EmbeddedResource Include="report\rdlc\Something.rdlc" />
+    <EmbeddedResource Include="report\rdlc\SubReportExperience.rdlc" />
+    <EmbeddedResource Include="sales\rdlc\RatesAnalysis.rdlc" />
+    <Content Include="sales\rdlc\SalesRpt.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2557</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2557</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

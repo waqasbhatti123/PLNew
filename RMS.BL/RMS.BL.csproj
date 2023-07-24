@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{73E1E6EC-FCFE-4707-AD66-4B64C84D07ED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RMS.BL</RootNamespace>
+    <AssemblyName>RMS.BL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddtionalAllDdBL.cs" />
+    <Compile Include="BudgetBL.cs" />
+    <Compile Include="Anonymous4BudgetGrid.cs" />
+    <Compile Include="AppMenuBL.cs" />
+    <Compile Include="CuurentYearBL.cs" />
+    <Compile Include="EmpAcrBL.cs" />
+    <Compile Include="EmpCpfBL.cs" />
+    <Compile Include="EmpEduBL.cs" />
+    <Compile Include="EmpEnqBL.cs" />
+    <Compile Include="EmpExpBL.cs" />
+    <Compile Include="EmpLitiBL.cs" />
+    <Compile Include="EmpProfileBL.cs" />
+    <Compile Include="Enums\Templates.cs" />
+    <Compile Include="ExcessSurrenderBL.cs" />
+    <Compile Include="Model\BudgetModel.cs" />
+    <Compile Include="Model\EmployeeProfileSummary.cs" />
+    <Compile Include="Model\ExcessSurrenderModel.cs" />
+    <Compile Include="Model\PriorExpeModel.cs" />
+    <Compile Include="Model\SalaryPackacgeVM.cs" />
+    <Compile Include="Model\SalarySummarySheetModel.cs" />
+    <Compile Include="Model\SNEModel.cs" />
+    <Compile Include="Model\sp_Leadgerdbo.cs" />
+    <Compile Include="Model\sp_Profiledbo.cs" />
+    <Compile Include="Model\VoucherRemainigBlnc.cs" />
+    <Compile Include="NewExpenditure.cs" />
+    <Compile Include="ProvidentBL.cs" />
+    <Compile Include="PucarAccoutsNewReportBL.cs" />
+    <Compile Include="PucarAccountReportsBL.cs" />
+    <Compile Include="RMS.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RMS.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="SalaryIncomeTax.cs" />
+    <Compile Include="SalaryPackageBL.cs" />
+    <Compile Include="SalaySummaryBL.cs" />
+    <Compile Include="SalContentBL.cs" />
+    <Compile Include="SNEBL.cs" />
+    <Compile Include="TaxpayableBL.cs" />
+    <Compile Include="TemplateBL.cs" />
+    <Compile Include="BankBL.cs" />
+    <Compile Include="BranchBL.cs" />
+    <Compile Include="ChequeParameters.cs" />
+    <Compile Include="COA_BL.cs" />
+    <Compile Include="CompanyBL.cs" />
+    <Compile Include="Anonymous4MatRec.cs" />
+    <Compile Include="AlterLot.cs" />
+    <Compile Include="Anonymous4PO.cs" />
+    <Compile Include="AttendanceBL.cs" />
+    <Compile Include="Anonymous4Attendance.cs" />
+    <Compile Include="ChqBL.cs" />
+    <Compile Include="AreaCodeBL.cs" />
+    <Compile Include="ArtifactsBL.cs" />
+    <Compile Include="AdjBL.cs" />
+    <Compile Include="CCBL.cs" />
+    <Compile Include="MailBL.cs" />
+    <Compile Include="ChequePrintBL.cs" />
+    <Compile Include="RecSettlementBL.cs" />
+    <Compile Include="InvSettlementBL.cs" />
+    <Compile Include="CurrencyBL.cs" />
+    <Compile Include="PostConsumptionBL.cs" />
+    <Compile Include="ItemGroupBL.cs" />
+    <Compile Include="VendorBL.cs" />
+    <Compile Include="SalesPersonBL.cs" />
+    <Compile Include="RetailerVisitsBL.cs" />
+    <Compile Include="TaxBL.cs" />
+    <Compile Include="ResponseBL.cs" />
+    <Compile Include="SaleReqBL.cs" />
+    <Compile Include="SalesRptBL.cs" />
+    <Compile Include="SalesOrderBL.cs" />
+    <Compile Include="ItemRateBL.cs" />
+    <Compile Include="SRNBL.cs" />
+    <Compile Include="GLYearBL.cs" />
+    <Compile Include="DCNBL.cs" />
+    <Compile Include="PTNBL.cs" />
+    <Compile Include="STNBL.cs" />
+    <Compile Include="UomBL.cs" />
+    <Compile Include="GlCashBookBL.cs" />
+    <Compile Include="StoreLocBL.cs" />
+    <Compile Include="PlSalPayBL.cs" />
+    <Compile Include="EmpProfRptBL.cs" />
+    <Compile Include="GlCodeBL1.cs" />
+    <Compile Include="GLReportParameterBL.cs" />
+    <Compile Include="ItemCodeBL.cs" />
+    <Compile Include="DepartmentBL.cs" />
+    <Compile Include="POrderBL.cs" />
+    <Compile Include="StoreRetBL.cs" />
+    <Compile Include="MatIssBL.cs" />
+    <Compile Include="MPNBL.cs" />
+    <Compile Include="MatRecBL.cs" />
+    <Compile Include="IGPBL.cs" />
+    <Compile Include="InvCode.cs" />
+    <Compile Include="PurchReqBL.cs" />
+    <Compile Include="DesignColorBL.cs" />
+    <Compile Include="DesignSetupBL.cs" />
+    <Compile Include="GlBudgetSetupBL.cs" />
+    <Compile Include="InvReports_BL.cs" />
+    <Compile Include="InvGC_BL.cs" />
+    <Compile Include="InvMN_BL.cs" />
+    <Compile Include="InvSearch_BL.cs" />
+    <Compile Include="InvSG_BL.cs" />
+    <Compile Include="GlCodeBL.cs" />
+    <Compile Include="GlTypeBL.cs" />
+    <Compile Include="DataContextFactory.cs" />
+    <Compile Include="EmpSplitterWithInsertion.cs" />
+    <Compile Include="InvGP_BL.cs" />
+    <Compile Include="LedgerCardBL.cs" />
+    <Compile Include="PlReportBL.cs" />
+    <Compile Include="PlUploadBL.cs" />
+    <Compile Include="PlResionationBL.cs" />
+    <Compile Include="LocationBL.cs" />
+    <Compile Include="PlCountBL.cs" />
+    <Compile Include="PreferenceBL.cs" />
+    <Compile Include="SalaryBL.cs" />
+    <Compile Include="PlExpenseBL.cs" />
+    <Compile Include="PlLeaveBL.cs" />
+    <Compile Include="EmpTransferBL.cs" />
+    <Compile Include="PlAllowBL.cs" />
+    <Compile Include="PlCodeBL.cs" />
+    <Compile Include="EmpBL.cs" />
+    <Compile Include="DashBoardBL.cs" />
+    <Compile Include="PlLoanBL.cs" />
+    <Compile Include="PojoAppUser.cs" />
+    <Compile Include="CityBL.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="Enums\MessageType.cs" />
+    <Compile Include="Enums\PageMode.cs" />
+    <Compile Include="GroupBL.cs" />
+    <Compile Include="RMSDB.cs" />
+    <Compile Include="PrivilageBL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Anonymous4Grid.cs" />
+    <Compile Include="ThicknessSetupBL.cs" />
+    <Compile Include="UserBL.cs" />
+    <Compile Include="voucherDetailBL.cs" />
+    <Compile Include="voucherHomeBL.cs" />
+    <Compile Include="VoucherSummaryBL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RMS.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>RMS.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RMS.dbml.layout">
+      <DependentUpon>RMS.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
