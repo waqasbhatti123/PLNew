@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RMS.BL</RootNamespace>
     <AssemblyName>RMS.BL</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>
     </SccProjectName>
@@ -46,6 +46,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.143\lib\net461\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -53,6 +56,7 @@
     <Reference Include="System.Data.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -68,6 +72,10 @@
     <Compile Include="Anonymous4BudgetGrid.cs" />
     <Compile Include="AppMenuBL.cs" />
     <Compile Include="CuurentYearBL.cs" />
+    <Compile Include="Dapper\Db.cs" />
+    <Compile Include="Dapper\Setting.cs" />
+    <Compile Include="Dto\ItemUomDto.cs" />
+    <Compile Include="Dto\ResponseDto.cs" />
     <Compile Include="EmpAcrBL.cs" />
     <Compile Include="EmpCpfBL.cs" />
     <Compile Include="EmpEduBL.cs" />
@@ -100,6 +108,7 @@
     <Compile Include="SalaryPackageBL.cs" />
     <Compile Include="SalaySummaryBL.cs" />
     <Compile Include="SalContentBL.cs" />
+    <Compile Include="Service\ItemUomService.cs" />
     <Compile Include="SNEBL.cs" />
     <Compile Include="TaxpayableBL.cs" />
     <Compile Include="TemplateBL.cs" />
@@ -213,6 +222,7 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings1.Designer.cs</LastGenOutput>

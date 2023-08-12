@@ -11,6 +11,8 @@ using RMS.BL;
 using System.Web;
 using System.Configuration;
 using System.Text;
+using RMS.BL.Service;
+using System.Runtime.InteropServices;
 
 namespace RMS
 {
@@ -57,7 +59,10 @@ namespace RMS
 
             if (!IsPostBack)
             {
-              
+                //var service = new ItemUomService();
+                //var uoms = service.Get();
+
+                //var x = 10;
             }
     
         }
